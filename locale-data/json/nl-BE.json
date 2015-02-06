@@ -403,20 +403,20 @@
                     "narrow": [
                         "v.C.",
                         "n.C.",
-                        "gj",
-                        "vgj"
+                        "vgj",
+                        "gj"
                     ],
                     "short": [
                         "v.Chr.",
                         "n.Chr.",
-                        "g.j.",
-                        "v.g.j."
+                        "v.g.j.",
+                        "g.j."
                     ],
                     "long": [
                         "voor Christus",
                         "na Christus",
-                        "gewone jaartelling",
-                        "vóór gewone jaartelling"
+                        "vóór gewone jaartelling",
+                        "gewone jaartelling"
                     ]
                 },
                 "dayPeriods": {

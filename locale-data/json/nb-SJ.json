@@ -268,20 +268,20 @@
                     "narrow": [
                         "f.Kr.",
                         "e.Kr.",
-                        "vt",
-                        "fvt."
+                        "fvt.",
+                        "vt"
                     ],
                     "short": [
                         "f.Kr.",
                         "e.Kr.",
-                        "vt.",
-                        "fvt."
+                        "fvt.",
+                        "vt."
                     ],
                     "long": [
                         "f.Kr.",
                         "e.Kr.",
-                        "vår tidsregning",
-                        "før vår tidsregning"
+                        "før vår tidsregning",
+                        "vår tidsregning"
                     ]
                 },
                 "dayPeriods": {

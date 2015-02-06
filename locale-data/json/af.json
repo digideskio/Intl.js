@@ -268,20 +268,20 @@
                     "narrow": [
                         "v.C.",
                         "n.C.",
-                        "vg",
-                        "vgj"
+                        "vgj",
+                        "vg"
                     ],
                     "short": [
                         "v.C.",
                         "n.C.",
-                        "g.j.",
-                        "v.g.j."
+                        "v.g.j.",
+                        "g.j."
                     ],
                     "long": [
                         "voor Christus",
                         "na Christus",
-                        "g.j.",
-                        "v.g.j."
+                        "v.g.j.",
+                        "g.j."
                     ]
                 },
                 "dayPeriods": {

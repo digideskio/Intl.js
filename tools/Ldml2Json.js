@@ -118,16 +118,19 @@ else {
 
 function cldrToIntl() {
     console.log('Processing JSON data...\n');
-    var
-        locales = fs.readdirSync(out),
+    console.log(out + '\n');
 
-                // root data is the parent for all locales
-                root = JSON.parse(fs.readFileSync(out + 'root/data.json')).main.root,
+    var locales = fs.readdirSync(out),
 
-                // ...and base language is the root for regional locales
-                base;
+        // root data is the parent for all locales
+        root = JSON.parse(fs.readFileSync(out + 'root/data.json')).main.root,
+
+        // ...and base language is the root for regional locales
+        base;
 
     locales.forEach(function (dir) {
+      console.log(dir);
+
         var json, obj;
 
         // Ignore en-US-POSIX

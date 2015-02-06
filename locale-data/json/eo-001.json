@@ -245,20 +245,20 @@
                     "narrow": [
                         "aK",
                         "pK",
-                        "KE",
-                        "aKE"
+                        "aKE",
+                        "KE"
                     ],
                     "short": [
                         "aK",
                         "pK",
-                        "K.E.",
-                        "a.K.E."
+                        "a.K.E.",
+                        "K.E."
                     ],
                     "long": [
                         "aK",
                         "pK",
-                        "Komuna Erao",
-                        "antaŭ Komuna Erao"
+                        "antaŭ Komuna Erao",
+                        "Komuna Erao"
                     ]
                 },
                 "dayPeriods": {

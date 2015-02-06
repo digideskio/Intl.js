@@ -268,20 +268,20 @@
                     "narrow": [
                         "v. Chr.",
                         "n. Chr.",
-                        "u. Z.",
-                        "v. u. Z."
+                        "v. u. Z.",
+                        "u. Z."
                     ],
                     "short": [
                         "v. Chr.",
                         "n. Chr.",
-                        "u. Z.",
-                        "v. u. Z."
+                        "v. u. Z.",
+                        "u. Z."
                     ],
                     "long": [
                         "v. Chr.",
                         "n. Chr.",
-                        "unserer Zeitrechnung",
-                        "vor unserer Zeitrechnung"
+                        "vor unserer Zeitrechnung",
+                        "unserer Zeitrechnung"
                     ]
                 },
                 "dayPeriods": {

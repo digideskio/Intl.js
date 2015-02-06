@@ -268,20 +268,20 @@
                     "narrow": [
                         "p.e.r.",
                         "e.r.",
-                        "e.s.",
-                        "p.e.s."
+                        "p.e.s.",
+                        "e.s."
                     ],
                     "short": [
                         "p.e.r.",
                         "e.r.",
-                        "e.s.",
-                        "p.e.s"
+                        "p.e.s",
+                        "e.s."
                     ],
                     "long": [
                         "para erës së re",
                         "erës së re",
-                        "erës sonë",
-                        "para erës sonë"
+                        "para erës sonë",
+                        "erës sonë"
                     ]
                 },
                 "dayPeriods": {

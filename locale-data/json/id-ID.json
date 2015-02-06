@@ -362,14 +362,14 @@
                     "short": [
                         "SM",
                         "M",
-                        "EU",
-                        "SEU"
+                        "SEU",
+                        "EU"
                     ],
                     "long": [
                         "Sebelum Masehi",
                         "M",
-                        "Era Umum",
-                        "Sebelum Era Umum"
+                        "Sebelum Era Umum",
+                        "Era Umum"
                     ]
                 },
                 "dayPeriods": {

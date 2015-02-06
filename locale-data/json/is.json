@@ -268,20 +268,20 @@
                     "narrow": [
                         "f.k.",
                         "e.k.",
-                        "lt",
-                        "flt"
+                        "flt",
+                        "lt"
                     ],
                     "short": [
                         "f.Kr.",
                         "e.Kr.",
-                        "l.t.",
-                        "f.l.t."
+                        "f.l.t.",
+                        "l.t."
                     ],
                     "long": [
                         "fyrir Krist",
                         "eftir Krist",
-                        "kristið tímatal",
-                        "fyrir kristið tímatal"
+                        "fyrir kristið tímatal",
+                        "kristið tímatal"
                     ]
                 },
                 "dayPeriods": {

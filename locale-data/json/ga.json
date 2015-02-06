@@ -268,20 +268,20 @@
                     "narrow": [
                         "RC",
                         "AD",
-                        "CR",
-                        "RCR"
+                        "RCR",
+                        "CR"
                     ],
                     "short": [
                         "RC",
                         "AD",
-                        "CR",
-                        "RCR"
+                        "RCR",
+                        "CR"
                     ],
                     "long": [
                         "Roimh Chríost",
                         "Anno Domini",
-                        "Comh-Ré",
-                        "Roimh Chomh-Ré"
+                        "Roimh Chomh-Ré",
+                        "Comh-Ré"
                     ]
                 },
                 "dayPeriods": {

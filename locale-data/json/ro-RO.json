@@ -299,14 +299,14 @@
                     "short": [
                         "î.Hr.",
                         "d.Hr.",
-                        "e.n.",
-                        "î.e.n"
+                        "î.e.n",
+                        "e.n."
                     ],
                     "long": [
                         "înainte de Hristos",
                         "după Hristos",
-                        "era noastră",
-                        "înaintea erei noastre"
+                        "înaintea erei noastre",
+                        "era noastră"
                     ]
                 },
                 "dayPeriods": {

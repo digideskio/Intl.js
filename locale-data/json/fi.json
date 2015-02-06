@@ -268,20 +268,20 @@
                     "narrow": [
                         "eK",
                         "jK",
-                        "jaa",
-                        "eaa"
+                        "eaa",
+                        "jaa"
                     ],
                     "short": [
                         "eKr.",
                         "jKr.",
-                        "jaa.",
-                        "eaa."
+                        "eaa.",
+                        "jaa."
                     ],
                     "long": [
                         "ennen Kristuksen syntymää",
                         "jälkeen Kristuksen syntymän",
-                        "jälkeen ajanlaskun alun",
-                        "ennen ajanlaskun alkua"
+                        "ennen ajanlaskun alkua",
+                        "jälkeen ajanlaskun alun"
                     ]
                 },
                 "dayPeriods": {

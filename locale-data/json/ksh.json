@@ -254,20 +254,20 @@
                     "narrow": [
                         "vC",
                         "nC",
-                        "dZ",
-                        "vdZ"
+                        "vdZ",
+                        "dZ"
                     ],
                     "short": [
                         "v. Chr.",
                         "n. Chr.",
-                        "d. Z.",
-                        "v. d. Z."
+                        "v. d. Z.",
+                        "d. Z."
                     ],
                     "long": [
                         "vür Chrestus",
                         "noh Chrestus",
-                        "der gewöhnlichen Zeitrechnung",
-                        "vür der gewöhnlichen Zeitrechnung"
+                        "vür der gewöhnlichen Zeitrechnung",
+                        "der gewöhnlichen Zeitrechnung"
                     ]
                 },
                 "dayPeriods": {

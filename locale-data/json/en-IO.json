@@ -272,14 +272,14 @@
                     "short": [
                         "BC",
                         "AD",
-                        "CE",
-                        "BCE"
+                        "BCE",
+                        "CE"
                     ],
                     "long": [
                         "Before Christ",
                         "Anno Domini",
-                        "Common Era",
-                        "Before Common Era"
+                        "Before Common Era",
+                        "Common Era"
                     ]
                 },
                 "dayPeriods": {

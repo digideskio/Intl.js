@@ -414,20 +414,20 @@
                     "narrow": [
                         "pr. Kr.",
                         "po Kr.",
-                        "pome",
-                        "prme"
+                        "prme",
+                        "pome"
                     ],
                     "short": [
                         "pr. Kr.",
                         "po Kr.",
-                        "mūsų eroje",
-                        "pr. m. e."
+                        "pr. m. e.",
+                        "mūsų eroje"
                     ],
                     "long": [
                         "prieš Kristų",
                         "po Kristaus",
-                        "mūsų eroje",
-                        "prieš mūsų erą"
+                        "prieš mūsų erą",
+                        "mūsų eroje"
                     ]
                 },
                 "dayPeriods": {

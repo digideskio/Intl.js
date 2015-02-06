@@ -402,20 +402,20 @@
                     "narrow": [
                         "av. J.-C.",
                         "ap. J.-C.",
-                        "EC",
-                        "AEC"
+                        "AEC",
+                        "EC"
                     ],
                     "short": [
                         "av. J.-C.",
                         "ap. J.-C.",
-                        "EC",
-                        "AEC"
+                        "AEC",
+                        "EC"
                     ],
                     "long": [
                         "avant Jésus-Christ",
                         "après Jésus-Christ",
-                        "ère commune",
-                        "avant l’ère commune"
+                        "avant l’ère commune",
+                        "ère commune"
                     ]
                 },
                 "dayPeriods": {
