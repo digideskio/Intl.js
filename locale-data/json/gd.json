@@ -276,14 +276,14 @@
                     "short": [
                         "RC",
                         "AD",
-                        "RLC",
-                        "LC"
+                        "LC",
+                        "RLC"
                     ],
                     "long": [
                         "Ro Chrìosta",
                         "An dèidh Chrìosta",
-                        "RLC",
-                        "LC"
+                        "LC",
+                        "RLC"
                     ]
                 },
                 "dayPeriods": {

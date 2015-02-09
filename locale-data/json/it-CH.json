@@ -272,20 +272,20 @@
                     "narrow": [
                         "aC",
                         "dC",
-                        "BCE",
-                        "CE"
+                        "CE",
+                        "BCE"
                     ],
                     "short": [
                         "aC",
                         "dC",
-                        "BCE",
-                        "CE"
+                        "CE",
+                        "BCE"
                     ],
                     "long": [
                         "a.C.",
                         "d.C.",
-                        "BCE",
-                        "CE"
+                        "CE",
+                        "BCE"
                     ]
                 },
                 "dayPeriods": {

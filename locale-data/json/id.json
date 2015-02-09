@@ -366,14 +366,14 @@
                     "short": [
                         "SM",
                         "M",
-                        "SEU",
-                        "EU"
+                        "EU",
+                        "SEU"
                     ],
                     "long": [
                         "Sebelum Masehi",
                         "M",
-                        "Sebelum Era Umum",
-                        "Era Umum"
+                        "Era Umum",
+                        "Sebelum Era Umum"
                     ]
                 },
                 "dayPeriods": {

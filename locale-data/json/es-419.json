@@ -272,14 +272,14 @@
                     "short": [
                         "a. C.",
                         "d. C.",
-                        "a. e. c.",
-                        "e. c."
+                        "e. c.",
+                        "a. e. c."
                     ],
                     "long": [
                         "antes de Cristo",
                         "después de Cristo",
-                        "antes de la era común",
-                        "era común"
+                        "era común",
+                        "antes de la era común"
                     ]
                 },
                 "dayPeriods": {

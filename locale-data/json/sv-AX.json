@@ -304,20 +304,20 @@
                     "narrow": [
                         "f.Kr.",
                         "e.Kr.",
-                        "fvt",
-                        "vt"
+                        "vt",
+                        "fvt"
                     ],
                     "short": [
                         "f.Kr.",
                         "e.Kr.",
-                        "f.v.t.",
-                        "v.t."
+                        "v.t.",
+                        "f.v.t."
                     ],
                     "long": [
                         "före Kristus",
                         "efter Kristus",
-                        "före västerländsk tideräkning",
-                        "västerländsk tideräkning"
+                        "västerländsk tideräkning",
+                        "före västerländsk tideräkning"
                     ]
                 },
                 "dayPeriods": {

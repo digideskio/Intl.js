@@ -945,7 +945,8 @@
     },
     "number": {
         "nu": [
-            "arab"
+            "arab",
+            "latn"
         ],
         "patterns": {
             "decimal": {

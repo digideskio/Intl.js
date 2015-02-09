@@ -272,14 +272,14 @@
                     "short": [
                         "BC",
                         "AD",
-                        "BCE",
-                        "CE"
+                        "CE",
+                        "BCE"
                     ],
                     "long": [
                         "Kabla ya Kristo",
                         "Baada ya Kristo",
-                        "BCE",
-                        "CE"
+                        "CE",
+                        "BCE"
                     ]
                 },
                 "dayPeriods": {

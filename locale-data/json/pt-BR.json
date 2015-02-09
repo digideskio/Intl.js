@@ -360,14 +360,14 @@
                     "short": [
                         "a.C.",
                         "d.C.",
-                        "AEC",
-                        "EC"
+                        "EC",
+                        "AEC"
                     ],
                     "long": [
                         "Antes de Cristo",
                         "Ano do Senhor",
-                        "Antes da Era Comum",
-                        "Era Comum"
+                        "Era Comum",
+                        "Antes da Era Comum"
                     ]
                 },
                 "dayPeriods": {

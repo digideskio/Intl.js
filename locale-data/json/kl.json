@@ -272,20 +272,20 @@
                     "narrow": [
                         "Kr.s.",
                         "Kr.k.",
-                        "f.v.t.",
-                        "v.t."
+                        "v.t.",
+                        "f.v.t."
                     ],
                     "short": [
                         "Kr.in.si.",
                         "Kr.in.king.",
-                        "f.v.t.",
-                        "v.t."
+                        "v.t.",
+                        "f.v.t."
                     ],
                     "long": [
                         "Kristusip inunngornerata siornagut",
                         "Kristusip inunngornerata kingornagut",
-                        "før vesterlandsk tidsregning",
-                        "vesterlandsk tidsregning"
+                        "vesterlandsk tidsregning",
+                        "før vesterlandsk tidsregning"
                     ]
                 },
                 "dayPeriods": {

@@ -290,14 +290,14 @@
                     "short": [
                         "BC",
                         "AD",
-                        "BCE",
-                        "CE"
+                        "CE",
+                        "BCE"
                     ],
                     "long": [
                         "Before Christ",
                         "Anno Domini",
-                        "Before Common Era",
-                        "Common Era"
+                        "Common Era",
+                        "Before Common Era"
                     ]
                 },
                 "dayPeriods": {

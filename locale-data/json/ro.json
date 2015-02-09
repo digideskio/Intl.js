@@ -303,14 +303,14 @@
                     "short": [
                         "î.Hr.",
                         "d.Hr.",
-                        "î.e.n",
-                        "e.n."
+                        "e.n.",
+                        "î.e.n"
                     ],
                     "long": [
                         "înainte de Hristos",
                         "după Hristos",
-                        "înaintea erei noastre",
-                        "era noastră"
+                        "era noastră",
+                        "înaintea erei noastre"
                     ]
                 },
                 "dayPeriods": {

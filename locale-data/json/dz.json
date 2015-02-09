@@ -879,7 +879,8 @@
     },
     "number": {
         "nu": [
-            "tibt"
+            "tibt",
+            "latn"
         ],
         "patterns": {
             "decimal": {

@@ -272,8 +272,8 @@
                     "short": [
                         "ق.م.",
                         "م.",
-                        "Eramizdan avvalgi",
-                        "CE"
+                        "CE",
+                        "Eramizdan avvalgi"
                     ],
                     "long": [
                         "M.A.",
@@ -885,7 +885,8 @@
     },
     "number": {
         "nu": [
-            "arabext"
+            "arabext",
+            "latn"
         ],
         "patterns": {
             "decimal": {

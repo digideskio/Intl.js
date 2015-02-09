@@ -300,20 +300,20 @@
                     "narrow": [
                         "aC",
                         "dC",
-                        "a. de la n. e.",
-                        "de la n.e."
+                        "de la n.e.",
+                        "a. de la n. e."
                     ],
                     "short": [
                         "aC",
                         "dC",
-                        "AEC",
-                        "EC"
+                        "EC",
+                        "AEC"
                     ],
                     "long": [
                         "abans de Crist",
                         "després de Crist",
-                        "abans de l’Era Comuna",
-                        "Era Comuna"
+                        "Era Comuna",
+                        "abans de l’Era Comuna"
                     ]
                 },
                 "dayPeriods": {

@@ -406,20 +406,20 @@
                     "narrow": [
                         "av. J.-C.",
                         "ap. J.-C.",
-                        "AEC",
-                        "EC"
+                        "EC",
+                        "AEC"
                     ],
                     "short": [
                         "av. J.-C.",
                         "ap. J.-C.",
-                        "AEC",
-                        "EC"
+                        "EC",
+                        "AEC"
                     ],
                     "long": [
                         "avant Jésus-Christ",
                         "après Jésus-Christ",
-                        "AEC",
-                        "EC"
+                        "EC",
+                        "AEC"
                     ]
                 },
                 "dayPeriods": {

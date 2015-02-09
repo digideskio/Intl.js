@@ -276,8 +276,8 @@
                     "long": [
                         "antes de Cristo",
                         "despois de Cristo",
-                        "a.C.",
-                        "d.C."
+                        "d.C.",
+                        "a.C."
                     ]
                 },
                 "dayPeriods": {
