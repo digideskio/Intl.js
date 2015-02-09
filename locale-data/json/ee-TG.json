@@ -60,7 +60,11 @@
                 "pattern": "{month}/{day}"
             },
             null,
-            null
+            null,
+            {
+                "year": "numeric",
+                "pattern": "{year}"
+            }
         ],
         "calendars": {
             "buddhist": {

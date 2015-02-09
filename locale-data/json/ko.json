@@ -82,6 +82,10 @@
                 "minute": "2-digit",
                 "pattern": "{hour}:{minute}",
                 "pattern12": "{ampm} {hour}:{minute}"
+            },
+            {
+                "year": "numeric",
+                "pattern": "{year}년"
             }
         ],
         "calendars": {

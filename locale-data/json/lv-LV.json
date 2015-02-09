@@ -56,7 +56,8 @@
                 "minute": "2-digit",
                 "pattern": "{hour}:{minute}",
                 "pattern12": "{hour}:{minute} {ampm}"
-            }
+            },
+            null
         ],
         "calendars": {
             "buddhist": {
