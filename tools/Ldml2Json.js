@@ -190,13 +190,14 @@ function processObj(data) {
         gopv = function (o) {
             return o ? Object.getOwnPropertyNames(o).map(function (e) { return o[e]; }) : undefined;
         },
+        latnNu = 'latn',
 
         // Copy numbering systems
         defaultNu   = data.numbers.defaultNumberingSystem,
         otherNu     = gopn(data.numbers.otherNumberingSystems).map(function(key) {
                         return data.numbers.otherNumberingSystems[key];
                     }).filter(function (key) {
-                        return key !== defaultNu;
+                        return key !== defaultNu && key !== latnNu;
                     }),
 
         // Map calendar names to BCP 47 unicode extension 'ca' keys
@@ -242,11 +243,11 @@ function processObj(data) {
                 hour12: !/H|k/.test(defaultTimeFormat),
 
                 formats: [],
-                calendars: {},
+                calendars: {}
             },
             number: {
                 // Numbering systems, with the default first
-                nu: [ defaultNu ],
+                nu: (defaultNu == latnNu) ? [ latnNu ] : [ defaultNu, latnNu ],
 
                 // Formatting patterns
                 patterns: {},
@@ -258,7 +259,7 @@ function processObj(data) {
             }
         };
 
-    // Copy the numeric symbols for each numbering system
+    // Copy the mbols for each numbering system
     gopn(data.numbers).filter(test.bind(/^symbols-/)).forEach(function (key) {
         var ptn,
             sym = data.numbers[key];
@@ -274,13 +275,13 @@ function processObj(data) {
     });
 
     // Create number patterns from CLDR patterns
-    if (ptn = data.numbers['decimalFormats-numberSystem-' + defaultNu] || data.numbers['decimalFormats-numberSystem-latn'])
+    if (ptn = data.numbers['decimalFormats-numberSystem-' + defaultNu] || data.numbers['decimalFormats-numberSystem-' + latnNu])
         ret.number.patterns.decimal = createNumberFormats(ptn.standard);
 
-    if (ptn = data.numbers['currencyFormats-numberSystem-' + defaultNu] || data.numbers['currencyFormats-numberSystem-latn'])
+    if (ptn = data.numbers['currencyFormats-numberSystem-' + defaultNu] || data.numbers['currencyFormats-numberSystem-'+ latnNu])
         ret.number.patterns.currency = createNumberFormats(ptn.standard);
 
-    if (ptn = data.numbers['percentFormats-numberSystem-' + defaultNu] || data.numbers['percentFormats-numberSystem-latn'])
+    if (ptn = data.numbers['percentFormats-numberSystem-' + defaultNu] || data.numbers['percentFormats-numberSystem-'+ latnNu])
         ret.number.patterns.percent = createNumberFormats(ptn.standard);
 
     // Check the grouping sizes for locales that group irregularly
@@ -377,7 +378,10 @@ function processObj(data) {
                 [ 'hms', '' ],
 
                 // 'hour', 'minute'
-                [ 'hm', '' ]
+                [ 'hm', '' ],
+
+                //year
+                ['','y']
             ],
             avail = defCa.dateTimeFormats.availableFormats,
             order = defCa.dateTimeFormats.medium,
