@@ -2428,7 +2428,7 @@ function FormatDateTime(dateTimeFormat, x) {
             else if (f in dateWidths) {
                 switch (p) {
                     case 'month':
-                        fv = resolveDateString(localeData, ca, 'months', f, tm['[['+ p +']]']);
+                        fv = resolveDateString(localeData, ca, internal['[[day]]'] ? 'months' : 'months-stand-alone', f, tm['[['+ p +']]']);
                         break;
 
                     case 'weekday':

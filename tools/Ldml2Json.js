@@ -310,12 +310,18 @@ function processObj(data) {
             ca = caMap[cal] || cal,
             obj = ret.date.calendars[ca] = {};
 
-        if ((frmt = data.dates.calendars[cal].months) && (frmt = frmt.format)) {
+        if (frmt = data.dates.calendars[cal].months) {
             obj.months = {
-                narrow: gopv(frmt.narrow),
-                short:  gopv(frmt.abbreviated),
-                long:   gopv(frmt.wide)
+                narrow: gopv(frmt['format'].narrow),
+                short:  gopv(frmt['format'].abbreviated),
+                long:   gopv(frmt['format'].wide)
             };
+
+            obj['months-stand-alone'] = {
+              narrow: gopv(frmt['stand-alone'].narrow),
+              short:  gopv(frmt['stand-alone'].abbreviated),
+              long:   gopv(frmt['stand-alone'].wide)
+            }
         }
         if ((frmt = data.dates.calendars[cal].days) && (frmt = frmt.format)) {
             obj.days = {
@@ -362,6 +368,10 @@ function processObj(data) {
                 // 'weekday', 'year', 'month', 'day'
                 [ '', 'yMMMMEEEEd' ],
 
+                // 'year', 'month', 'day', 'hour', 'minute'
+                ['hm', 'yMMMMd'],
+                ['hm', 'yMd'],
+
                 // 'year', 'month', 'day'
                 [ '', 'yMMMMd'],
                 [ '', 'yMd'],
@@ -381,7 +391,19 @@ function processObj(data) {
                 [ 'hm', '' ],
 
                 //year
-                ['','y']
+                ['','y'],
+
+                //standalone month
+                ['','MMMM'],
+                ['','M'],
+
+                //standalone weekday
+                ['','EEEE'],
+                ['','E'],
+
+                //standalone day
+                ['','d']
+
             ],
             avail = defCa.dateTimeFormats.availableFormats,
             order = defCa.dateTimeFormats.medium,
