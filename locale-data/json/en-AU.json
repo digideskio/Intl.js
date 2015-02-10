@@ -41,6 +41,24 @@
                 "month": "long",
                 "day": "numeric",
                 "year": "numeric",
+                "hour": "numeric",
+                "minute": "2-digit",
+                "pattern": "{month} {day}, {year} {hour}:{minute}",
+                "pattern12": "{month} {day}, {year} {hour}:{minute} {ampm}"
+            },
+            {
+                "day": "numeric",
+                "month": "numeric",
+                "year": "numeric",
+                "hour": "numeric",
+                "minute": "2-digit",
+                "pattern": "{day}/{month}/{year} {hour}:{minute}",
+                "pattern12": "{day}/{month}/{year} {hour}:{minute} {ampm}"
+            },
+            {
+                "month": "long",
+                "day": "numeric",
+                "year": "numeric",
                 "pattern": "{month} {day}, {year}"
             },
             {
@@ -85,6 +103,26 @@
             {
                 "year": "numeric",
                 "pattern": "{year}"
+            },
+            {
+                "month": "long",
+                "pattern": "{month}"
+            },
+            {
+                "month": "2-digit",
+                "pattern": "{month}"
+            },
+            {
+                "weekday": "long",
+                "pattern": "{weekday}"
+            },
+            {
+                "weekday": "short",
+                "pattern": "{weekday}"
+            },
+            {
+                "day": "numeric",
+                "pattern": "{day}"
             }
         ],
         "calendars": {
@@ -97,6 +135,50 @@
             },
             "chinese": {
                 "months": {
+                    "short": [
+                        "1",
+                        "2",
+                        "3",
+                        "4",
+                        "5",
+                        "6",
+                        "7",
+                        "8",
+                        "9",
+                        "10",
+                        "11",
+                        "12"
+                    ],
+                    "long": [
+                        "1",
+                        "2",
+                        "3",
+                        "4",
+                        "5",
+                        "6",
+                        "7",
+                        "8",
+                        "9",
+                        "10",
+                        "11",
+                        "12"
+                    ]
+                },
+                "months-stand-alone": {
+                    "narrow": [
+                        "1",
+                        "2",
+                        "3",
+                        "4",
+                        "5",
+                        "6",
+                        "7",
+                        "8",
+                        "9",
+                        "10",
+                        "11",
+                        "12"
+                    ],
                     "short": [
                         "1",
                         "2",
@@ -145,6 +227,23 @@
                         "Nasie"
                     ]
                 },
+                "months-stand-alone": {
+                    "narrow": [
+                        "1",
+                        "2",
+                        "3",
+                        "4",
+                        "5",
+                        "6",
+                        "7",
+                        "8",
+                        "9",
+                        "10",
+                        "11",
+                        "12",
+                        "13"
+                    ]
+                },
                 "eras": {
                     "short": [
                         "ERA0",
@@ -168,6 +267,23 @@
                         "Hamle",
                         "Nehasse",
                         "Pagumen"
+                    ]
+                },
+                "months-stand-alone": {
+                    "narrow": [
+                        "1",
+                        "2",
+                        "3",
+                        "4",
+                        "5",
+                        "6",
+                        "7",
+                        "8",
+                        "9",
+                        "10",
+                        "11",
+                        "12",
+                        "13"
                     ]
                 },
                 "eras": {
@@ -199,6 +315,22 @@
                         "M10",
                         "M11",
                         "M12"
+                    ]
+                },
+                "months-stand-alone": {
+                    "narrow": [
+                        "1",
+                        "2",
+                        "3",
+                        "4",
+                        "5",
+                        "6",
+                        "7",
+                        "8",
+                        "9",
+                        "10",
+                        "11",
+                        "12"
                     ]
                 },
                 "eras": {
@@ -239,6 +371,22 @@
                         "December"
                     ]
                 },
+                "months-stand-alone": {
+                    "narrow": [
+                        "J",
+                        "F",
+                        "M",
+                        "A",
+                        "M",
+                        "J",
+                        "J",
+                        "A",
+                        "S",
+                        "O",
+                        "N",
+                        "D"
+                    ]
+                },
                 "days": {
                     "narrow": [
                         "Su",
@@ -276,14 +424,14 @@
                     "short": [
                         "BC",
                         "AD",
-                        "CE",
-                        "BCE"
+                        "BCE",
+                        "CE"
                     ],
                     "long": [
                         "Before Christ",
                         "Anno Domini",
-                        "Common Era",
-                        "Before Common Era"
+                        "Before Common Era",
+                        "Common Era"
                     ]
                 },
                 "dayPeriods": {
@@ -310,6 +458,24 @@
                         "Adar II"
                     ]
                 },
+                "months-stand-alone": {
+                    "narrow": [
+                        "1",
+                        "2",
+                        "3",
+                        "4",
+                        "5",
+                        "6",
+                        "7",
+                        "8",
+                        "9",
+                        "10",
+                        "11",
+                        "12",
+                        "13",
+                        "7"
+                    ]
+                },
                 "eras": {
                     "short": [
                         "AM"
@@ -331,6 +497,22 @@
                         "Pausa",
                         "Magha",
                         "Phalguna"
+                    ]
+                },
+                "months-stand-alone": {
+                    "narrow": [
+                        "1",
+                        "2",
+                        "3",
+                        "4",
+                        "5",
+                        "6",
+                        "7",
+                        "8",
+                        "9",
+                        "10",
+                        "11",
+                        "12"
                     ]
                 },
                 "eras": {
@@ -368,6 +550,22 @@
                         "Shawwal",
                         "Dhuʻl-Qiʻdah",
                         "Dhuʻl-Hijjah"
+                    ]
+                },
+                "months-stand-alone": {
+                    "narrow": [
+                        "1",
+                        "2",
+                        "3",
+                        "4",
+                        "5",
+                        "6",
+                        "7",
+                        "8",
+                        "9",
+                        "10",
+                        "11",
+                        "12"
                     ]
                 },
                 "eras": {
@@ -871,6 +1069,22 @@
                         "Dey",
                         "Bahman",
                         "Esfand"
+                    ]
+                },
+                "months-stand-alone": {
+                    "narrow": [
+                        "1",
+                        "2",
+                        "3",
+                        "4",
+                        "5",
+                        "6",
+                        "7",
+                        "8",
+                        "9",
+                        "10",
+                        "11",
+                        "12"
                     ]
                 },
                 "eras": {

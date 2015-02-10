@@ -41,6 +41,24 @@
                 "day": "2-digit",
                 "month": "long",
                 "year": "numeric",
+                "hour": "numeric",
+                "minute": "2-digit",
+                "pattern": "{day} {month} {year}  {hour}:{minute}",
+                "pattern12": "{day} {month} {year} {ampm} {hour}:{minute}"
+            },
+            {
+                "day": "2-digit",
+                "month": "2-digit",
+                "year": "numeric",
+                "hour": "numeric",
+                "minute": "2-digit",
+                "pattern": "{day}.{month}.{year}  {hour}:{minute}",
+                "pattern12": "{day}.{month}.{year} {ampm} {hour}:{minute}"
+            },
+            {
+                "day": "2-digit",
+                "month": "long",
+                "year": "numeric",
                 "pattern": "{day} {month} {year}"
             },
             {
@@ -85,6 +103,26 @@
             {
                 "year": "numeric",
                 "pattern": "{year}"
+            },
+            {
+                "month": "long",
+                "pattern": "{month}"
+            },
+            {
+                "month": "numeric",
+                "pattern": "{month}"
+            },
+            {
+                "weekday": "long",
+                "pattern": "{weekday}"
+            },
+            {
+                "weekday": "short",
+                "pattern": "{weekday}"
+            },
+            {
+                "day": "numeric",
+                "pattern": "{day}"
             }
         ],
         "calendars": {
@@ -111,6 +149,22 @@
                         "M11",
                         "M12"
                     ]
+                },
+                "months-stand-alone": {
+                    "narrow": [
+                        "1",
+                        "2",
+                        "3",
+                        "4",
+                        "5",
+                        "6",
+                        "7",
+                        "8",
+                        "9",
+                        "10",
+                        "11",
+                        "12"
+                    ]
                 }
             },
             "coptic": {
@@ -129,6 +183,23 @@
                         "Ebip",
                         "Mısrî",
                         "Nesî"
+                    ]
+                },
+                "months-stand-alone": {
+                    "narrow": [
+                        "1",
+                        "2",
+                        "3",
+                        "4",
+                        "5",
+                        "6",
+                        "7",
+                        "8",
+                        "9",
+                        "10",
+                        "11",
+                        "12",
+                        "13"
                     ]
                 },
                 "eras": {
@@ -154,6 +225,23 @@
                         "Hamle",
                         "Nehasa",
                         "Pagumiene"
+                    ]
+                },
+                "months-stand-alone": {
+                    "narrow": [
+                        "1",
+                        "2",
+                        "3",
+                        "4",
+                        "5",
+                        "6",
+                        "7",
+                        "8",
+                        "9",
+                        "10",
+                        "11",
+                        "12",
+                        "13"
                     ]
                 },
                 "eras": {
@@ -187,6 +275,22 @@
                         "M12"
                     ]
                 },
+                "months-stand-alone": {
+                    "narrow": [
+                        "1",
+                        "2",
+                        "3",
+                        "4",
+                        "5",
+                        "6",
+                        "7",
+                        "8",
+                        "9",
+                        "10",
+                        "11",
+                        "12"
+                    ]
+                },
                 "eras": {
                     "short": [
                         "ERA0",
@@ -196,6 +300,50 @@
             },
             "gregory": {
                 "months": {
+                    "narrow": [
+                        "O",
+                        "Ş",
+                        "M",
+                        "N",
+                        "M",
+                        "H",
+                        "T",
+                        "A",
+                        "E",
+                        "E",
+                        "K",
+                        "A"
+                    ],
+                    "short": [
+                        "Oca",
+                        "Şub",
+                        "Mar",
+                        "Nis",
+                        "May",
+                        "Haz",
+                        "Tem",
+                        "Ağu",
+                        "Eyl",
+                        "Eki",
+                        "Kas",
+                        "Ara"
+                    ],
+                    "long": [
+                        "Ocak",
+                        "Şubat",
+                        "Mart",
+                        "Nisan",
+                        "Mayıs",
+                        "Haziran",
+                        "Temmuz",
+                        "Ağustos",
+                        "Eylül",
+                        "Ekim",
+                        "Kasım",
+                        "Aralık"
+                    ]
+                },
+                "months-stand-alone": {
                     "narrow": [
                         "O",
                         "Ş",
@@ -272,14 +420,14 @@
                     "short": [
                         "MÖ",
                         "MS",
-                        "İS",
-                        "İÖ"
+                        "İÖ",
+                        "İS"
                     ],
                     "long": [
                         "Milattan Önce",
                         "Milattan Sonra",
-                        "İsa’dan Sonra",
-                        "İsa’dan Önce"
+                        "İsa’dan Önce",
+                        "İsa’dan Sonra"
                     ]
                 },
                 "dayPeriods": {
@@ -306,6 +454,24 @@
                         "Adar II"
                     ]
                 },
+                "months-stand-alone": {
+                    "narrow": [
+                        "1",
+                        "2",
+                        "3",
+                        "4",
+                        "5",
+                        "6",
+                        "7",
+                        "8",
+                        "9",
+                        "10",
+                        "11",
+                        "12",
+                        "13",
+                        "7"
+                    ]
+                },
                 "eras": {
                     "short": [
                         "AM"
@@ -329,6 +495,22 @@
                         "Phalguna"
                     ]
                 },
+                "months-stand-alone": {
+                    "narrow": [
+                        "1",
+                        "2",
+                        "3",
+                        "4",
+                        "5",
+                        "6",
+                        "7",
+                        "8",
+                        "9",
+                        "10",
+                        "11",
+                        "12"
+                    ]
+                },
                 "eras": {
                     "short": [
                         "Saka"
@@ -350,6 +532,36 @@
                         "Şevval",
                         "Zilkade",
                         "Zilhicce"
+                    ],
+                    "long": [
+                        "Muharrem",
+                        "Safer",
+                        "Rebiülevvel",
+                        "Rebiülahir",
+                        "Cemaziyelevvel",
+                        "Cemaziyelahir",
+                        "Recep",
+                        "Şaban",
+                        "Ramazan",
+                        "Şevval",
+                        "Zilkade",
+                        "Zilhicce"
+                    ]
+                },
+                "months-stand-alone": {
+                    "narrow": [
+                        "1",
+                        "2",
+                        "3",
+                        "4",
+                        "5",
+                        "6",
+                        "7",
+                        "8",
+                        "9",
+                        "10",
+                        "11",
+                        "12"
                     ],
                     "long": [
                         "Muharrem",
@@ -867,6 +1079,22 @@
                         "Dey",
                         "Behmen",
                         "Esfend"
+                    ]
+                },
+                "months-stand-alone": {
+                    "narrow": [
+                        "1",
+                        "2",
+                        "3",
+                        "4",
+                        "5",
+                        "6",
+                        "7",
+                        "8",
+                        "9",
+                        "10",
+                        "11",
+                        "12"
                     ]
                 },
                 "eras": {

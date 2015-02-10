@@ -42,6 +42,24 @@
                 "day": "numeric",
                 "month": "long",
                 "year": "numeric",
+                "hour": "numeric",
+                "minute": "2-digit",
+                "pattern": "{day} {month} {year} {hour}:{minute}",
+                "pattern12": "{day} {month} {year} {hour}:{minute} {ampm}"
+            },
+            {
+                "day": "numeric",
+                "month": "numeric",
+                "year": "numeric",
+                "hour": "numeric",
+                "minute": "2-digit",
+                "pattern": "{day}-{month}-{year} {hour}:{minute}",
+                "pattern12": "{day}-{month}-{year} {hour}:{minute} {ampm}"
+            },
+            {
+                "day": "numeric",
+                "month": "long",
+                "year": "numeric",
                 "pattern": "{day} {month} {year}"
             },
             {
@@ -86,6 +104,26 @@
             {
                 "year": "numeric",
                 "pattern": "{year}"
+            },
+            {
+                "month": "long",
+                "pattern": "{month}"
+            },
+            {
+                "month": "numeric",
+                "pattern": "{month}"
+            },
+            {
+                "weekday": "long",
+                "pattern": "{weekday}"
+            },
+            {
+                "weekday": "short",
+                "pattern": "{weekday}"
+            },
+            {
+                "day": "numeric",
+                "pattern": "{day}"
             }
         ],
         "calendars": {
@@ -126,10 +164,73 @@
                         "M11",
                         "M12"
                     ]
+                },
+                "months-stand-alone": {
+                    "narrow": [
+                        "1",
+                        "2",
+                        "3",
+                        "4",
+                        "5",
+                        "6",
+                        "7",
+                        "8",
+                        "9",
+                        "10",
+                        "11",
+                        "12"
+                    ]
                 }
             },
             "coptic": {
                 "months": {
+                    "narrow": [
+                        "1",
+                        "2",
+                        "3",
+                        "4",
+                        "5",
+                        "6",
+                        "7",
+                        "8",
+                        "9",
+                        "10",
+                        "11",
+                        "12",
+                        "13"
+                    ],
+                    "short": [
+                        "Tut",
+                        "Babah",
+                        "Hatur",
+                        "Kiyahk",
+                        "Tubah",
+                        "Amshir",
+                        "Baramhat",
+                        "Baramundah",
+                        "Bashans",
+                        "Ba’unah",
+                        "Abib",
+                        "Misra",
+                        "Nasi"
+                    ],
+                    "long": [
+                        "Tut",
+                        "Babah",
+                        "Hatur",
+                        "Kiyahk",
+                        "Tubah",
+                        "Amshir",
+                        "Baramhat",
+                        "Baramundah",
+                        "Bashans",
+                        "Ba’unah",
+                        "Abib",
+                        "Misra",
+                        "Nasi"
+                    ]
+                },
+                "months-stand-alone": {
                     "narrow": [
                         "1",
                         "2",
@@ -199,10 +300,73 @@
                         "11",
                         "12"
                     ]
+                },
+                "months-stand-alone": {
+                    "narrow": [
+                        "1",
+                        "2",
+                        "3",
+                        "4",
+                        "5",
+                        "6",
+                        "7",
+                        "8",
+                        "9",
+                        "10",
+                        "11",
+                        "12"
+                    ]
                 }
             },
             "ethiopic": {
                 "months": {
+                    "narrow": [
+                        "1",
+                        "2",
+                        "3",
+                        "4",
+                        "5",
+                        "6",
+                        "7",
+                        "8",
+                        "9",
+                        "10",
+                        "11",
+                        "12",
+                        "13"
+                    ],
+                    "short": [
+                        "Mäskäräm",
+                        "Teqemt",
+                        "Hedar",
+                        "Tahsas",
+                        "T’er",
+                        "Yäkatit",
+                        "Mägabit",
+                        "Miyazya",
+                        "Genbot",
+                        "Säne",
+                        "Hamle",
+                        "Nähase",
+                        "Pagumän"
+                    ],
+                    "long": [
+                        "Mäskäräm",
+                        "Teqemt",
+                        "Hedar",
+                        "Tahsas",
+                        "T’er",
+                        "Yäkatit",
+                        "Mägabit",
+                        "Miyazya",
+                        "Genbot",
+                        "Säne",
+                        "Hamle",
+                        "Nähase",
+                        "Pagumän"
+                    ]
+                },
+                "months-stand-alone": {
                     "narrow": [
                         "1",
                         "2",
@@ -280,6 +444,22 @@
                         "M12"
                     ]
                 },
+                "months-stand-alone": {
+                    "narrow": [
+                        "1",
+                        "2",
+                        "3",
+                        "4",
+                        "5",
+                        "6",
+                        "7",
+                        "8",
+                        "9",
+                        "10",
+                        "11",
+                        "12"
+                    ]
+                },
                 "eras": {
                     "short": [
                         "ERA0",
@@ -332,6 +512,50 @@
                         "desimber"
                     ]
                 },
+                "months-stand-alone": {
+                    "narrow": [
+                        "J",
+                        "F",
+                        "M",
+                        "A",
+                        "M",
+                        "J",
+                        "J",
+                        "A",
+                        "S",
+                        "O",
+                        "N",
+                        "D"
+                    ],
+                    "short": [
+                        "jan",
+                        "feb",
+                        "mrt",
+                        "apr",
+                        "mai",
+                        "jun",
+                        "jul",
+                        "aug",
+                        "sep",
+                        "okt",
+                        "nov",
+                        "des"
+                    ],
+                    "long": [
+                        "jannewaris",
+                        "febrewaris",
+                        "maart",
+                        "april",
+                        "maaie",
+                        "juny",
+                        "july",
+                        "augustus",
+                        "septimber",
+                        "oktober",
+                        "novimber",
+                        "desimber"
+                    ]
+                },
                 "days": {
                     "narrow": [
                         "si",
@@ -365,20 +589,20 @@
                     "narrow": [
                         "f.K.",
                         "n.K.",
-                        "gj",
-                        "fgj"
+                        "fgj",
+                        "gj"
                     ],
                     "short": [
                         "f.Kr.",
                         "n.Kr.",
-                        "g.j.",
-                        "f.g.j."
+                        "f.g.j.",
+                        "g.j."
                     ],
                     "long": [
                         "Foar Kristus",
                         "nei Kristus",
-                        "gewoane jiertelling",
-                        "foar gewoane jiertelling"
+                        "foar gewoane jiertelling",
+                        "gewoane jiertelling"
                     ]
                 },
                 "dayPeriods": {
@@ -388,6 +612,56 @@
             },
             "hebrew": {
                 "months": {
+                    "short": [
+                        "Tisjrie",
+                        "Chesjwan",
+                        "Kislev",
+                        "Tevet",
+                        "Sjevat",
+                        "Adar A",
+                        "Adar",
+                        "Nisan",
+                        "Ijar",
+                        "Sivan",
+                        "Tammoez",
+                        "Av",
+                        "Elloel",
+                        "Adar B"
+                    ],
+                    "long": [
+                        "Tisjrie",
+                        "Chesjwan",
+                        "Kislev",
+                        "Tevet",
+                        "Sjevat",
+                        "Adar A",
+                        "Adar",
+                        "Nisan",
+                        "Ijar",
+                        "Sivan",
+                        "Tammoez",
+                        "Av",
+                        "Elloel",
+                        "Adar B"
+                    ]
+                },
+                "months-stand-alone": {
+                    "narrow": [
+                        "1",
+                        "2",
+                        "3",
+                        "4",
+                        "5",
+                        "6",
+                        "7",
+                        "8",
+                        "9",
+                        "10",
+                        "11",
+                        "12",
+                        "13",
+                        "7"
+                    ],
                     "short": [
                         "Tisjrie",
                         "Chesjwan",
@@ -472,6 +746,50 @@
                         "Phaalguna"
                     ]
                 },
+                "months-stand-alone": {
+                    "narrow": [
+                        "1",
+                        "2",
+                        "3",
+                        "4",
+                        "5",
+                        "6",
+                        "7",
+                        "8",
+                        "9",
+                        "10",
+                        "11",
+                        "12"
+                    ],
+                    "short": [
+                        "Chaitra",
+                        "Vaishakha",
+                        "Jyeshtha",
+                        "Aashaadha",
+                        "Shraavana",
+                        "Bhaadrapada",
+                        "Ashvina",
+                        "Kaartika",
+                        "Agrahayana",
+                        "Pausha",
+                        "Maagha",
+                        "Phaalguna"
+                    ],
+                    "long": [
+                        "Chaitra",
+                        "Vaishakha",
+                        "Jyeshtha",
+                        "Aashaadha",
+                        "Shraavana",
+                        "Bhaadrapada",
+                        "Ashvina",
+                        "Kaartika",
+                        "Agrahayana",
+                        "Pausha",
+                        "Maagha",
+                        "Phaalguna"
+                    ]
+                },
                 "eras": {
                     "short": [
                         "SAKA"
@@ -480,6 +798,50 @@
             },
             "islamic": {
                 "months": {
+                    "narrow": [
+                        "1",
+                        "2",
+                        "3",
+                        "4",
+                        "5",
+                        "6",
+                        "7",
+                        "8",
+                        "9",
+                        "10",
+                        "11",
+                        "12"
+                    ],
+                    "short": [
+                        "Moeh.",
+                        "Saf.",
+                        "Rab. I",
+                        "Rab. II",
+                        "Joem. I",
+                        "Joem. II",
+                        "Raj.",
+                        "Sja.",
+                        "Ram.",
+                        "Sjaw.",
+                        "Doe al k.",
+                        "Doe al h."
+                    ],
+                    "long": [
+                        "Moeharram",
+                        "Safar",
+                        "Rabiʻa al awal",
+                        "Rabiʻa al thani",
+                        "Joemadʻal awal",
+                        "Joemadʻal thani",
+                        "Rajab",
+                        "Sjaʻaban",
+                        "Ramadan",
+                        "Sjawal",
+                        "Doe al kaʻaba",
+                        "Doe al hizja"
+                    ]
+                },
+                "months-stand-alone": {
                     "narrow": [
                         "1",
                         "2",
@@ -1011,6 +1373,50 @@
             },
             "persian": {
                 "months": {
+                    "narrow": [
+                        "1",
+                        "2",
+                        "3",
+                        "4",
+                        "5",
+                        "6",
+                        "7",
+                        "8",
+                        "9",
+                        "10",
+                        "11",
+                        "12"
+                    ],
+                    "short": [
+                        "Farvardin",
+                        "Ordibehesht",
+                        "Khordad",
+                        "Tir",
+                        "Mordad",
+                        "Shahrivar",
+                        "Mehr",
+                        "Aban",
+                        "Azar",
+                        "Dey",
+                        "Bahman",
+                        "Esfand"
+                    ],
+                    "long": [
+                        "Farvardin",
+                        "Ordibehesht",
+                        "Khordad",
+                        "Tir",
+                        "Mordad",
+                        "Shahrivar",
+                        "Mehr",
+                        "Aban",
+                        "Azar",
+                        "Dey",
+                        "Bahman",
+                        "Esfand"
+                    ]
+                },
+                "months-stand-alone": {
                     "narrow": [
                         "1",
                         "2",

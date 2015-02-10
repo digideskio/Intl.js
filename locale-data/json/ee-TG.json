@@ -27,6 +27,8 @@
                 "year": "numeric",
                 "pattern": "{weekday}, {month} {day}, {year}"
             },
+            null,
+            null,
             {
                 "month": "long",
                 "day": "numeric",
@@ -64,6 +66,26 @@
             {
                 "year": "numeric",
                 "pattern": "{year}"
+            },
+            {
+                "month": "long",
+                "pattern": "{month}"
+            },
+            {
+                "month": "numeric",
+                "pattern": "{month}"
+            },
+            {
+                "weekday": "long",
+                "pattern": "{weekday}"
+            },
+            {
+                "weekday": "short",
+                "pattern": "{weekday}"
+            },
+            {
+                "day": "numeric",
+                "pattern": "{day}"
             }
         ],
         "calendars": {
@@ -104,10 +126,101 @@
                         "adeɛmekpɔxe",
                         "dzome"
                     ]
+                },
+                "months-stand-alone": {
+                    "narrow": [
+                        "1",
+                        "2",
+                        "3",
+                        "4",
+                        "5",
+                        "6",
+                        "7",
+                        "8",
+                        "9",
+                        "10",
+                        "11",
+                        "12"
+                    ],
+                    "short": [
+                        "dzv",
+                        "dzd",
+                        "ted",
+                        "afɔ",
+                        "dam",
+                        "mas",
+                        "sia",
+                        "dea",
+                        "any",
+                        "kele",
+                        "ade",
+                        "dzm"
+                    ],
+                    "long": [
+                        "dzove",
+                        "dzodze",
+                        "tedoxe",
+                        "afɔfiẽ",
+                        "damɛ",
+                        "masa",
+                        "siamlɔm",
+                        "deasiamime",
+                        "anyɔnyɔ",
+                        "kele",
+                        "adeɛmekpɔxe",
+                        "dzome"
+                    ]
                 }
             },
             "coptic": {
                 "months": {
+                    "short": [
+                        "dzv",
+                        "dzd",
+                        "ted",
+                        "afɔ",
+                        "dam",
+                        "mas",
+                        "sia",
+                        "dea",
+                        "any",
+                        "kel",
+                        "ade",
+                        "dzm",
+                        "foa"
+                    ],
+                    "long": [
+                        "dzove",
+                        "dzodze",
+                        "tedoxe",
+                        "afɔfiẽ",
+                        "damɛ",
+                        "masa",
+                        "siamlɔm",
+                        "deasiamime",
+                        "anyɔnyɔ",
+                        "kele",
+                        "adeɛmekpɔxe",
+                        "dzome",
+                        "ƒoave"
+                    ]
+                },
+                "months-stand-alone": {
+                    "narrow": [
+                        "1",
+                        "2",
+                        "3",
+                        "4",
+                        "5",
+                        "6",
+                        "7",
+                        "8",
+                        "9",
+                        "10",
+                        "11",
+                        "12",
+                        "13"
+                    ],
                     "short": [
                         "dzv",
                         "dzd",
@@ -179,6 +292,53 @@
                         "ƒoave"
                     ]
                 },
+                "months-stand-alone": {
+                    "narrow": [
+                        "1",
+                        "2",
+                        "3",
+                        "4",
+                        "5",
+                        "6",
+                        "7",
+                        "8",
+                        "9",
+                        "10",
+                        "11",
+                        "12",
+                        "13"
+                    ],
+                    "short": [
+                        "dzv",
+                        "dzd",
+                        "ted",
+                        "afɔ",
+                        "dam",
+                        "mas",
+                        "sia",
+                        "dea",
+                        "any",
+                        "kel",
+                        "ade",
+                        "dzm",
+                        "ƒoa"
+                    ],
+                    "long": [
+                        "dzove",
+                        "dzodze",
+                        "tedoxe",
+                        "afɔfie",
+                        "damɛ",
+                        "masa",
+                        "siamlɔm",
+                        "deasiamime",
+                        "anyɔnyɔ",
+                        "kele",
+                        "adeɛmekpɔxe",
+                        "dzome",
+                        "ƒoave"
+                    ]
+                },
                 "eras": {
                     "short": [
                         "ERA0",
@@ -210,6 +370,22 @@
                         "M12"
                     ]
                 },
+                "months-stand-alone": {
+                    "narrow": [
+                        "1",
+                        "2",
+                        "3",
+                        "4",
+                        "5",
+                        "6",
+                        "7",
+                        "8",
+                        "9",
+                        "10",
+                        "11",
+                        "12"
+                    ]
+                },
                 "eras": {
                     "short": [
                         "ERA0",
@@ -219,6 +395,50 @@
             },
             "gregory": {
                 "months": {
+                    "narrow": [
+                        "d",
+                        "d",
+                        "t",
+                        "a",
+                        "d",
+                        "m",
+                        "s",
+                        "d",
+                        "a",
+                        "k",
+                        "a",
+                        "d"
+                    ],
+                    "short": [
+                        "dzv",
+                        "dzd",
+                        "ted",
+                        "afɔ",
+                        "dam",
+                        "mas",
+                        "sia",
+                        "dea",
+                        "any",
+                        "kel",
+                        "ade",
+                        "dzm"
+                    ],
+                    "long": [
+                        "dzove",
+                        "dzodze",
+                        "tedoxe",
+                        "afɔfĩe",
+                        "dama",
+                        "masa",
+                        "siamlɔm",
+                        "deasiamime",
+                        "anyɔnyɔ",
+                        "kele",
+                        "adeɛmekpɔxe",
+                        "dzome"
+                    ]
+                },
+                "months-stand-alone": {
                     "narrow": [
                         "d",
                         "d",
@@ -345,6 +565,56 @@
                         "siamlɔm"
                     ]
                 },
+                "months-stand-alone": {
+                    "narrow": [
+                        "1",
+                        "2",
+                        "3",
+                        "4",
+                        "5",
+                        "6",
+                        "7",
+                        "8",
+                        "9",
+                        "10",
+                        "11",
+                        "12",
+                        "13",
+                        "7"
+                    ],
+                    "short": [
+                        "dzv",
+                        "dzd",
+                        "ted",
+                        "afɔ",
+                        "dam",
+                        "mas",
+                        "sia",
+                        "dea",
+                        "any",
+                        "kel",
+                        "ade",
+                        "dzm",
+                        "foa",
+                        "sia"
+                    ],
+                    "long": [
+                        "dzove",
+                        "dzodze",
+                        "tedoxe",
+                        "afɔfiẽ",
+                        "damɛ",
+                        "masa",
+                        "siamlɔm",
+                        "dasiamime",
+                        "anyɔnyɔ",
+                        "kele",
+                        "adeɛmekpɔxe",
+                        "dzome",
+                        "ƒoave",
+                        "siamlɔm"
+                    ]
+                },
                 "eras": {
                     "short": [
                         "ŋdi"
@@ -382,6 +652,50 @@
                         "dzome"
                     ]
                 },
+                "months-stand-alone": {
+                    "narrow": [
+                        "1",
+                        "2",
+                        "3",
+                        "4",
+                        "5",
+                        "6",
+                        "7",
+                        "8",
+                        "9",
+                        "10",
+                        "11",
+                        "12"
+                    ],
+                    "short": [
+                        "dzv",
+                        "dzd",
+                        "ted",
+                        "afɔ",
+                        "dam",
+                        "mas",
+                        "sia",
+                        "dea",
+                        "any",
+                        "kel",
+                        "ade",
+                        "dzm"
+                    ],
+                    "long": [
+                        "dzove",
+                        "dzodze",
+                        "tedoxe",
+                        "afɔfiẽ",
+                        "damɛ",
+                        "masa",
+                        "siamlɔm",
+                        "deasiamime",
+                        "anyɔnyɔ",
+                        "kele",
+                        "adeɛmekpɔxe",
+                        "dzome"
+                    ]
+                },
                 "eras": {
                     "short": [
                         "Saka"
@@ -390,6 +704,50 @@
             },
             "islamic": {
                 "months": {
+                    "short": [
+                        "dzv",
+                        "dzd",
+                        "ted",
+                        "afɔ",
+                        "dam",
+                        "mas",
+                        "sia",
+                        "dea",
+                        "any",
+                        "kel",
+                        "ade",
+                        "dzm"
+                    ],
+                    "long": [
+                        "dzove",
+                        "dzodze",
+                        "tedoxe",
+                        "afɔfiẽ",
+                        "damɛ",
+                        "masa",
+                        "siamlɔm",
+                        "deasiamime",
+                        "anyɔnyɔ",
+                        "kele",
+                        "adeɛmekpɔxe",
+                        "dzome"
+                    ]
+                },
+                "months-stand-alone": {
+                    "narrow": [
+                        "1",
+                        "2",
+                        "3",
+                        "4",
+                        "5",
+                        "6",
+                        "7",
+                        "8",
+                        "9",
+                        "10",
+                        "11",
+                        "12"
+                    ],
                     "short": [
                         "dzv",
                         "dzd",
@@ -907,6 +1265,50 @@
             },
             "persian": {
                 "months": {
+                    "short": [
+                        "dzv",
+                        "dzd",
+                        "ted",
+                        "afɔ",
+                        "dam",
+                        "mas",
+                        "sia",
+                        "dea",
+                        "any",
+                        "kel",
+                        "ade",
+                        "dzm"
+                    ],
+                    "long": [
+                        "dzove",
+                        "dzodze",
+                        "tedoxe",
+                        "afɔfiẽ",
+                        "damɛ",
+                        "masa",
+                        "siamlɔm",
+                        "deasiamime",
+                        "anyɔnyɔ",
+                        "kele",
+                        "adeɛmekpɔxe",
+                        "dzome"
+                    ]
+                },
+                "months-stand-alone": {
+                    "narrow": [
+                        "1",
+                        "2",
+                        "3",
+                        "4",
+                        "5",
+                        "6",
+                        "7",
+                        "8",
+                        "9",
+                        "10",
+                        "11",
+                        "12"
+                    ],
                     "short": [
                         "dzv",
                         "dzd",

@@ -41,6 +41,24 @@
                 "month": "long",
                 "day": "numeric",
                 "year": "numeric",
+                "hour": "numeric",
+                "minute": "2-digit",
+                "pattern": "{month} {day},{year} {hour}:{minute}",
+                "pattern12": "{month} {day},{year} {hour}:{minute} {ampm}"
+            },
+            {
+                "month": "numeric",
+                "day": "numeric",
+                "year": "numeric",
+                "hour": "numeric",
+                "minute": "2-digit",
+                "pattern": "{month}/{day}/{year} {hour}:{minute}",
+                "pattern12": "{month}/{day}/{year} {hour}:{minute} {ampm}"
+            },
+            {
+                "month": "long",
+                "day": "numeric",
+                "year": "numeric",
                 "pattern": "{month} {day},{year}"
             },
             {
@@ -85,6 +103,26 @@
             {
                 "year": "numeric",
                 "pattern": "{year}"
+            },
+            {
+                "month": "long",
+                "pattern": "{month}"
+            },
+            {
+                "month": "numeric",
+                "pattern": "{month}"
+            },
+            {
+                "weekday": "long",
+                "pattern": "{weekday}"
+            },
+            {
+                "weekday": "short",
+                "pattern": "{weekday}"
+            },
+            {
+                "day": "numeric",
+                "pattern": "{day}"
             }
         ],
         "calendars": {
@@ -111,6 +149,22 @@
                         "M11",
                         "M12"
                     ]
+                },
+                "months-stand-alone": {
+                    "narrow": [
+                        "1",
+                        "2",
+                        "3",
+                        "4",
+                        "5",
+                        "6",
+                        "7",
+                        "8",
+                        "9",
+                        "10",
+                        "11",
+                        "12"
+                    ]
                 }
             },
             "coptic": {
@@ -129,6 +183,23 @@
                         "Epep",
                         "Mesra",
                         "Nasie"
+                    ]
+                },
+                "months-stand-alone": {
+                    "narrow": [
+                        "1",
+                        "2",
+                        "3",
+                        "4",
+                        "5",
+                        "6",
+                        "7",
+                        "8",
+                        "9",
+                        "10",
+                        "11",
+                        "12",
+                        "13"
                     ]
                 },
                 "eras": {
@@ -154,6 +225,23 @@
                         "Hamle",
                         "Nehasse",
                         "Pagumen"
+                    ]
+                },
+                "months-stand-alone": {
+                    "narrow": [
+                        "1",
+                        "2",
+                        "3",
+                        "4",
+                        "5",
+                        "6",
+                        "7",
+                        "8",
+                        "9",
+                        "10",
+                        "11",
+                        "12",
+                        "13"
                     ]
                 },
                 "eras": {
@@ -187,6 +275,22 @@
                         "M12"
                     ]
                 },
+                "months-stand-alone": {
+                    "narrow": [
+                        "1",
+                        "2",
+                        "3",
+                        "4",
+                        "5",
+                        "6",
+                        "7",
+                        "8",
+                        "9",
+                        "10",
+                        "11",
+                        "12"
+                    ]
+                },
                 "eras": {
                     "short": [
                         "ERA0",
@@ -196,6 +300,50 @@
             },
             "gregory": {
                 "months": {
+                    "narrow": [
+                        "ಜ",
+                        "ಫೆ",
+                        "ಮಾ",
+                        "ಏ",
+                        "ಮೇ",
+                        "ಜೂ",
+                        "ಜು",
+                        "ಆ",
+                        "ಸೆ",
+                        "ಅ",
+                        "ನ",
+                        "ಡಿ"
+                    ],
+                    "short": [
+                        "ಜನ",
+                        "ಫೆಬ್ರ",
+                        "ಮಾರ್ಚ್",
+                        "ಏಪ್ರಿ",
+                        "ಮೇ",
+                        "ಜೂನ್",
+                        "ಜುಲೈ",
+                        "ಆಗ",
+                        "ಸೆಪ್ಟೆಂ",
+                        "ಅಕ್ಟೋ",
+                        "ನವೆಂ",
+                        "ಡಿಸೆಂ"
+                    ],
+                    "long": [
+                        "ಜನವರಿ",
+                        "ಫೆಬ್ರವರಿ",
+                        "ಮಾರ್ಚ್",
+                        "ಏಪ್ರಿಲ್",
+                        "ಮೇ",
+                        "ಜೂನ್",
+                        "ಜುಲೈ",
+                        "ಆಗಸ್ಟ್",
+                        "ಸೆಪ್ಟೆಂಬರ್",
+                        "ಅಕ್ಟೋಬರ್",
+                        "ನವೆಂಬರ್",
+                        "ಡಿಸೆಂಬರ್"
+                    ]
+                },
+                "months-stand-alone": {
                     "narrow": [
                         "ಜ",
                         "ಫೆ",
@@ -272,14 +420,14 @@
                     "short": [
                         "ಕ್ರಿ.ಪೂ",
                         "ಕ್ರಿ.ಶ",
-                        "ಪ್ರಸಕ್ತ ಶಕ",
-                        "ಕ್ರಿ.ಪೂ.ಕಾಲ"
+                        "ಕ್ರಿ.ಪೂ.ಕಾಲ",
+                        "ಪ್ರಸಕ್ತ ಶಕ"
                     ],
                     "long": [
                         "ಕ್ರಿಸ್ತ ಪೂರ್ವ",
                         "ಕ್ರಿಸ್ತ ಶಕ",
-                        "ಪ್ರಸಕ್ತ ಶಕ",
-                        "ಕ್ರಿ.ಪೂ.ಕಾಲ"
+                        "ಕ್ರಿ.ಪೂ.ಕಾಲ",
+                        "ಪ್ರಸಕ್ತ ಶಕ"
                     ]
                 },
                 "dayPeriods": {
@@ -306,6 +454,24 @@
                         "Adar II"
                     ]
                 },
+                "months-stand-alone": {
+                    "narrow": [
+                        "1",
+                        "2",
+                        "3",
+                        "4",
+                        "5",
+                        "6",
+                        "7",
+                        "8",
+                        "9",
+                        "10",
+                        "11",
+                        "12",
+                        "13",
+                        "7"
+                    ]
+                },
                 "eras": {
                     "short": [
                         "AM"
@@ -327,6 +493,22 @@
                         "Pausa",
                         "Magha",
                         "Phalguna"
+                    ]
+                },
+                "months-stand-alone": {
+                    "narrow": [
+                        "1",
+                        "2",
+                        "3",
+                        "4",
+                        "5",
+                        "6",
+                        "7",
+                        "8",
+                        "9",
+                        "10",
+                        "11",
+                        "12"
                     ]
                 },
                 "eras": {
@@ -364,6 +546,22 @@
                         "Shawwal",
                         "Dhuʻl-Qiʻdah",
                         "Dhuʻl-Hijjah"
+                    ]
+                },
+                "months-stand-alone": {
+                    "narrow": [
+                        "1",
+                        "2",
+                        "3",
+                        "4",
+                        "5",
+                        "6",
+                        "7",
+                        "8",
+                        "9",
+                        "10",
+                        "11",
+                        "12"
                     ]
                 },
                 "eras": {
@@ -867,6 +1065,22 @@
                         "Dey",
                         "Bahman",
                         "Esfand"
+                    ]
+                },
+                "months-stand-alone": {
+                    "narrow": [
+                        "1",
+                        "2",
+                        "3",
+                        "4",
+                        "5",
+                        "6",
+                        "7",
+                        "8",
+                        "9",
+                        "10",
+                        "11",
+                        "12"
                     ]
                 },
                 "eras": {
