@@ -40,10 +40,10 @@ var
     out = 'cldr/',
 
     // Match these datetime components in a CLDR pattern, except those in single quotes
-    expDTComponents = /(?:[Eec]{1,6}|G{1,5}|(?:[yYu]+|U{1,5})|[ML]{1,5}|d{1,2}|a|[hkHK]{1,2}|m{1,2}|s{1,2}|z{1,4})(?=([^']*'[^']*')*[^']*$)/g,
+    expDTComponents = /(?:[Eec]{1,6}|G{1,5}|(?:U{1,5})|[yYu]{1,5}|[ML]{1,5}|d{1,3}|a|[hkHK]{1,2}|m{1,2}|s{1,2}|z{1,4})(?=([^']*'[^']*')*[^']*$)/g,
 
     // Skip over patterns with these datetime components
-    unwantedDTCs = /[QxXVOvZASjgFDwWIQqH]/,
+    unwantedDTCs = /[QxXVOvZASjgFDwWIQq]/,
 
     // Maps the number of characters in a CLDR pattern to the specification
     dtcLengthMap = {
@@ -129,9 +129,7 @@ function cldrToIntl() {
         base;
 
     locales.forEach(function (dir) {
-      console.log(dir);
-
-        var json, obj;
+      var json, obj;
 
         // Ignore en-US-POSIX
         if (dir === 'en-US-POSIX')
@@ -318,14 +316,14 @@ function processObj(data) {
             };
 
             obj['months-stand-alone'] = {
-              narrow: gopv(frmt['stand-alone'].narrow),
-              short:  gopv(frmt['stand-alone'].abbreviated),
-              long:   gopv(frmt['stand-alone'].wide)
+              narrow: gopv(frmt['stand-alone'].narrow ? frmt['stand-alone'].narrow : frmt['format'].narrow),
+              short:  gopv(frmt['stand-alone'].abbreviated ? frmt['stand-alone'].abbreviated : frmt['format'].abbreviated),
+              long:   gopv(frmt['stand-alone'].wide ? frmt['stand-alone'].wide : frmt['format'].wide)
             }
         }
         if ((frmt = data.dates.calendars[cal].days) && (frmt = frmt.format)) {
             obj.days = {
-                narrow: gopv(frmt.short),
+                narrow: gopv(frmt.narrow),
                 short:  gopv(frmt.abbreviated),
                 long:   gopv(frmt.wide)
             };
@@ -369,19 +367,31 @@ function processObj(data) {
                 [ '', 'yMMMMEEEEd' ],
 
                 // 'year', 'month', 'day', 'hour', 'minute'
-                ['hm', 'yMMMMd'],
+                ['hhm', 'yMMMMd'],
+                ['hm' , 'yMMMMd'],
+                ['hhm', 'yMMMd'],
+                ['hm' , 'yMMMd'],
+                ['hhm', 'yMMdd'],
+                ['hhm', 'yMd'],
                 ['hm', 'yMd'],
+                ['hhm', 'yyMd'],
+                ['hhm', 'yyMMdd'],
+                ['hm', 'yyMd'],
 
                 // 'year', 'month', 'day'
                 [ '', 'yMMMMd'],
+                [ '', 'yMMMd'],
+                [ '', 'yMMdd'],
                 [ '', 'yMd'],
 
                 // 'year', 'month'
-                [ '', 'yM' ],
                 [ '', 'yMMMM' ],
+                [ '', 'yMMM' ],
+                [ '', 'yM' ],
 
                 // 'month', 'day'
                 [ '', 'MMMMd' ],
+                [ '', 'MMMd' ],
                 [ '', 'Md' ],
 
                 // 'hour', 'minute', 'second'
@@ -392,14 +402,17 @@ function processObj(data) {
 
                 //year
                 ['','y'],
+                ['','yy'],
 
                 //standalone month
-                ['','MMMM'],
-                ['','M'],
+                ['','MMMM'],  //long
+                ['','MMM'],   //short
+                ['','M'],     //numeric
 
                 //standalone weekday
-                ['','EEEE'],
-                ['','E'],
+                ['','EEEE'],  //long
+                ['','EEEEE'], //narrow
+                ['','E'],     //numeric
 
                 //standalone day
                 ['','d']
@@ -409,9 +422,26 @@ function processObj(data) {
             order = defCa.dateTimeFormats.medium,
             verify = function (frmt) {
                 // Unicode LDML spec allows us to expand some pattern components to suit
-                var dFrmt = frmt[1] && frmt[1].replace(/M{4,5}/, 'MMM').replace(/E{4,6}/, 'E');
+                var dFrmt = frmt[1],
+                    tFrmt = frmt[0];
 
-                return (!frmt[0] || avail[frmt[0]]) && (!dFrmt || avail[dFrmt]);
+                if(dFrmt) {
+
+                  if(/M{3,5}/.test(dFrmt)){
+                    dFrmt = dFrmt.replace(/M{4,5}/, 'MMM')
+                  } else {
+                    dFrmt = dFrmt.replace(/M{2,3}/, 'M')
+                  }
+
+                  dFrmt =  dFrmt.replace(/E{4,6}/, 'E')
+                          .replace(/y{1,3}/, 'y')
+                          .replace(/d{1,3}/, 'd');
+                }
+
+                if(tFrmt) {
+                  tFrmt =  tFrmt.replace('hh', 'h');
+                }
+                return (!tFrmt || avail[tFrmt]) && (!dFrmt || avail[dFrmt]);
             };
 
         // Make sure every local supports these minimum required formats
@@ -420,7 +450,8 @@ function processObj(data) {
 
         // Map the formats into a pattern for createDateTimeFormats
         ret.date.formats = formats.map(function (frmt) {
-            var M, E, dFrmt;
+
+            var M, E, Y, D, H, dFrmt, tFrmt;
 
             // Expand component lengths if necessary, as allowed in the LDML spec
             if (frmt[1]) {
@@ -428,19 +459,54 @@ function processObj(data) {
                 // as arrays that can be joined to create a new substring
                 M = new Array((frmt[1].match(/M/g)||[]).length + 1);
                 E = new Array((frmt[1].match(/E/g)||[]).length + 1);
+                Y = new Array((frmt[1].match(/y/g)||[]).length + 1);
+                D = new Array((frmt[1].match(/d/g)||[]).length + 1)
+                ;
 
-                dFrmt = avail[frmt[1].replace(/M{4,5}/, 'MMM').replace(/E{4,6}/, 'E')];
+                if(avail[frmt[1]]) {
+                  dFrmt =  avail[frmt[1]];
+                } else {
+                  dFrmt = frmt[1];
+                  if(/M{3,5}/.test(dFrmt)){
+                    dFrmt = dFrmt.replace(/M{4,5}/, 'MMM')
+                  } else {
+                    dFrmt = dFrmt.replace(/M{2,3}/, 'M')
+                  }
+                  dFrmt = dFrmt.replace(/E{4,6}/, 'E').replace(/y{1,3}/, 'y').replace(/d{1,3}/, 'd')
+
+                  dFrmt = avail[dFrmt];
+                }
 
                 if (M.length > 2)
-                    dFrmt = dFrmt.replace(/(M|L)+/, M.join('$1'));
+                  dFrmt = dFrmt.replace(/(M|L)+/, M.join('$1'));
 
                 if (E.length > 2)
-                    dFrmt = dFrmt.replace(/([Eec])+/, E.join('$1'));
+                  dFrmt = dFrmt.replace(/([Eec])+/, E.join('$1'));
+
+                if (Y.length > 2)
+                  dFrmt = dFrmt.replace(/([Yy])+/, Y.join('$1'));
+
+                if (D.length > 2)
+                  dFrmt = dFrmt.replace(/([Dd])+/, D.join('$1'));
             }
+
+            if(frmt[0]) {
+              H = new Array((frmt[0].match(/h/g)||[]).length + 1);
+
+              if(avail[frmt[0]]) {
+                tFrmt =  avail[frmt[0]];
+              } else {
+                tFrmt = avail[frmt[0].replace('hh','h')];
+              }
+
+              if(H.length > 2)
+                tFrmt = tFrmt.replace(/([h])+/, H.join('$1'));
+            }
+
 
             return createDateTimeFormat(
                 order
-                    .replace('{0}', avail[frmt[0]] || '')
+                    .replace('{0}', tFrmt || '')
                     .replace('{1}', dFrmt || '')
                     .replace(/^[,\s]+|[,\s]+$/gi, '')
             );
@@ -531,7 +597,7 @@ function createDateTimeFormat(format) {
         }
     });
 
-    // From http://www.unicode.org/reports/tr35/tr35-dates.html#Date_Format_Patterns:
+  // From http://www.unicode.org/reports/tr35/tr35-dates.html#Date_Format_Patterns:
     //  'In patterns, two single quotes represents a literal single quote, either
     //   inside or outside single quotes. Text within single quotes is not
     //   interpreted in any way (except for two adjacent single quotes).'
@@ -544,7 +610,7 @@ function createDateTimeFormat(format) {
         formatObj.pattern = formatObj.pattern.replace('{ampm}', '').trim();
     }
 
-    return formatObj;
+  return formatObj;
 }
 
 /**
