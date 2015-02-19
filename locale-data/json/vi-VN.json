@@ -38,6 +38,15 @@
                 "pattern": "{weekday}, {day} {month} {year}"
             },
             {
+                "hour": "2-digit",
+                "minute": "2-digit",
+                "day": "2-digit",
+                "month": "long",
+                "year": "numeric",
+                "pattern": "{hour}:{minute}  {day} {month}, {year}",
+                "pattern12": "{hour}:{minute} {ampm} {day} {month}, {year}"
+            },
+            {
                 "hour": "numeric",
                 "minute": "2-digit",
                 "day": "2-digit",
@@ -45,6 +54,42 @@
                 "year": "numeric",
                 "pattern": "{hour}:{minute}  {day} {month}, {year}",
                 "pattern12": "{hour}:{minute} {ampm} {day} {month}, {year}"
+            },
+            {
+                "hour": "2-digit",
+                "minute": "2-digit",
+                "day": "2-digit",
+                "month": "short",
+                "year": "numeric",
+                "pattern": "{hour}:{minute}  {day} {month}, {year}",
+                "pattern12": "{hour}:{minute} {ampm} {day} {month}, {year}"
+            },
+            {
+                "hour": "numeric",
+                "minute": "2-digit",
+                "day": "2-digit",
+                "month": "short",
+                "year": "numeric",
+                "pattern": "{hour}:{minute}  {day} {month}, {year}",
+                "pattern12": "{hour}:{minute} {ampm} {day} {month}, {year}"
+            },
+            {
+                "hour": "2-digit",
+                "minute": "2-digit",
+                "day": "2-digit",
+                "month": "2-digit",
+                "year": "numeric",
+                "pattern": "{hour}:{minute}  {day}/{month}/{year}",
+                "pattern12": "{hour}:{minute} {ampm} {day}/{month}/{year}"
+            },
+            {
+                "hour": "2-digit",
+                "minute": "2-digit",
+                "day": "numeric",
+                "month": "numeric",
+                "year": "numeric",
+                "pattern": "{hour}:{minute}  {day}/{month}/{year}",
+                "pattern12": "{hour}:{minute} {ampm} {day}/{month}/{year}"
             },
             {
                 "hour": "numeric",
@@ -56,10 +101,49 @@
                 "pattern12": "{hour}:{minute} {ampm} {day}/{month}/{year}"
             },
             {
+                "hour": "2-digit",
+                "minute": "2-digit",
+                "day": "numeric",
+                "month": "numeric",
+                "year": "2-digit",
+                "pattern": "{hour}:{minute}  {day}/{month}/{year}",
+                "pattern12": "{hour}:{minute} {ampm} {day}/{month}/{year}"
+            },
+            {
+                "hour": "2-digit",
+                "minute": "2-digit",
+                "day": "2-digit",
+                "month": "2-digit",
+                "year": "2-digit",
+                "pattern": "{hour}:{minute}  {day}/{month}/{year}",
+                "pattern12": "{hour}:{minute} {ampm} {day}/{month}/{year}"
+            },
+            {
+                "hour": "numeric",
+                "minute": "2-digit",
+                "day": "numeric",
+                "month": "numeric",
+                "year": "2-digit",
+                "pattern": "{hour}:{minute}  {day}/{month}/{year}",
+                "pattern12": "{hour}:{minute} {ampm} {day}/{month}/{year}"
+            },
+            {
                 "day": "2-digit",
                 "month": "long",
                 "year": "numeric",
                 "pattern": "{day} {month}, {year}"
+            },
+            {
+                "day": "2-digit",
+                "month": "short",
+                "year": "numeric",
+                "pattern": "{day} {month}, {year}"
+            },
+            {
+                "day": "2-digit",
+                "month": "2-digit",
+                "year": "numeric",
+                "pattern": "{day}/{month}/{year}"
             },
             {
                 "day": "numeric",
@@ -68,18 +152,28 @@
                 "pattern": "{day}/{month}/{year}"
             },
             {
+                "month": "long",
+                "year": "numeric",
+                "pattern": "{month} năm {year}"
+            },
+            {
+                "month": "short",
+                "year": "numeric",
+                "pattern": "{month} {year}"
+            },
+            {
                 "month": "numeric",
                 "year": "numeric",
                 "pattern": "{month}/{year}"
             },
             {
+                "day": "numeric",
                 "month": "long",
-                "year": "numeric",
-                "pattern": "{month} {year}"
+                "pattern": "{day} {month}"
             },
             {
                 "day": "numeric",
-                "month": "long",
+                "month": "short",
                 "pattern": "{day} {month}"
             },
             {
@@ -105,7 +199,15 @@
                 "pattern": "{year}"
             },
             {
+                "year": "2-digit",
+                "pattern": "{year}"
+            },
+            {
                 "month": "long",
+                "pattern": "{month}"
+            },
+            {
+                "month": "short",
                 "pattern": "{month}"
             },
             {
@@ -114,6 +216,10 @@
             },
             {
                 "weekday": "long",
+                "pattern": "{weekday}"
+            },
+            {
+                "weekday": "narrow",
                 "pattern": "{weekday}"
             },
             {
@@ -465,6 +571,20 @@
                         "10",
                         "11",
                         "12"
+                    ],
+                    "long": [
+                        "M01",
+                        "M02",
+                        "M03",
+                        "M04",
+                        "M05",
+                        "M06",
+                        "M07",
+                        "M08",
+                        "M09",
+                        "M10",
+                        "M11",
+                        "M12"
                     ]
                 },
                 "eras": {
@@ -842,6 +962,34 @@
                         "10",
                         "11",
                         "12"
+                    ],
+                    "short": [
+                        "Muh.",
+                        "Saf.",
+                        "Rab. I",
+                        "Rab. II",
+                        "Jum. I",
+                        "Jum. II",
+                        "Raj.",
+                        "Sha.",
+                        "Ram.",
+                        "Shaw.",
+                        "Dhuʻl-Q.",
+                        "Dhuʻl-H."
+                    ],
+                    "long": [
+                        "Muharram",
+                        "Safar",
+                        "Rabiʻ I",
+                        "Rabiʻ II",
+                        "Jumada I",
+                        "Jumada II",
+                        "Rajab",
+                        "Shaʻban",
+                        "Ramadan",
+                        "Shawwal",
+                        "Dhuʻl-Qiʻdah",
+                        "Dhuʻl-Hijjah"
                     ]
                 },
                 "eras": {

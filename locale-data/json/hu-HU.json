@@ -41,6 +41,15 @@
                 "year": "numeric",
                 "month": "long",
                 "day": "numeric",
+                "hour": "2-digit",
+                "minute": "2-digit",
+                "pattern": "{year}. {month} {day}.  {hour}:{minute}",
+                "pattern12": "{year}. {month} {day}. {ampm} {hour}:{minute}"
+            },
+            {
+                "year": "numeric",
+                "month": "long",
+                "day": "numeric",
                 "hour": "numeric",
                 "minute": "2-digit",
                 "pattern": "{year}. {month} {day}.  {hour}:{minute}",
@@ -48,6 +57,69 @@
             },
             {
                 "year": "numeric",
+                "month": "short",
+                "day": "numeric",
+                "hour": "2-digit",
+                "minute": "2-digit",
+                "pattern": "{year}. {month} {day}.  {hour}:{minute}",
+                "pattern12": "{year}. {month} {day}. {ampm} {hour}:{minute}"
+            },
+            {
+                "year": "numeric",
+                "month": "short",
+                "day": "numeric",
+                "hour": "numeric",
+                "minute": "2-digit",
+                "pattern": "{year}. {month} {day}.  {hour}:{minute}",
+                "pattern12": "{year}. {month} {day}. {ampm} {hour}:{minute}"
+            },
+            {
+                "year": "numeric",
+                "month": "2-digit",
+                "day": "2-digit",
+                "hour": "2-digit",
+                "minute": "2-digit",
+                "pattern": "{year}. {month}. {day}.  {hour}:{minute}",
+                "pattern12": "{year}. {month}. {day}. {ampm} {hour}:{minute}"
+            },
+            {
+                "year": "numeric",
+                "month": "2-digit",
+                "day": "2-digit",
+                "hour": "2-digit",
+                "minute": "2-digit",
+                "pattern": "{year}. {month}. {day}.  {hour}:{minute}",
+                "pattern12": "{year}. {month}. {day}. {ampm} {hour}:{minute}"
+            },
+            {
+                "year": "numeric",
+                "month": "2-digit",
+                "day": "2-digit",
+                "hour": "numeric",
+                "minute": "2-digit",
+                "pattern": "{year}. {month}. {day}.  {hour}:{minute}",
+                "pattern12": "{year}. {month}. {day}. {ampm} {hour}:{minute}"
+            },
+            {
+                "year": "2-digit",
+                "month": "2-digit",
+                "day": "2-digit",
+                "hour": "2-digit",
+                "minute": "2-digit",
+                "pattern": "{year}. {month}. {day}.  {hour}:{minute}",
+                "pattern12": "{year}. {month}. {day}. {ampm} {hour}:{minute}"
+            },
+            {
+                "year": "2-digit",
+                "month": "2-digit",
+                "day": "2-digit",
+                "hour": "2-digit",
+                "minute": "2-digit",
+                "pattern": "{year}. {month}. {day}.  {hour}:{minute}",
+                "pattern12": "{year}. {month}. {day}. {ampm} {hour}:{minute}"
+            },
+            {
+                "year": "2-digit",
                 "month": "2-digit",
                 "day": "2-digit",
                 "hour": "numeric",
@@ -63,14 +135,21 @@
             },
             {
                 "year": "numeric",
+                "month": "short",
+                "day": "numeric",
+                "pattern": "{year}. {month} {day}."
+            },
+            {
+                "year": "numeric",
                 "month": "2-digit",
                 "day": "2-digit",
                 "pattern": "{year}. {month}. {day}."
             },
             {
                 "year": "numeric",
-                "month": "numeric",
-                "pattern": "{year}. {month}."
+                "month": "2-digit",
+                "day": "2-digit",
+                "pattern": "{year}. {month}. {day}."
             },
             {
                 "year": "numeric",
@@ -78,7 +157,22 @@
                 "pattern": "{year}. {month}"
             },
             {
+                "year": "numeric",
+                "month": "short",
+                "pattern": "{year}. {month}"
+            },
+            {
+                "year": "numeric",
+                "month": "numeric",
+                "pattern": "{year}. {month}."
+            },
+            {
                 "month": "long",
+                "day": "numeric",
+                "pattern": "{month} {day}."
+            },
+            {
+                "month": "short",
                 "day": "numeric",
                 "pattern": "{month} {day}."
             },
@@ -105,7 +199,15 @@
                 "pattern": "{year}."
             },
             {
+                "year": "2-digit",
+                "pattern": "{year}."
+            },
+            {
                 "month": "long",
+                "pattern": "{month}"
+            },
+            {
+                "month": "short",
                 "pattern": "{month}"
             },
             {
@@ -114,6 +216,10 @@
             },
             {
                 "weekday": "long",
+                "pattern": "{weekday}"
+            },
+            {
+                "weekday": "narrow",
                 "pattern": "{weekday}"
             },
             {
@@ -465,6 +571,20 @@
                         "10",
                         "11",
                         "12"
+                    ],
+                    "long": [
+                        "M01",
+                        "M02",
+                        "M03",
+                        "M04",
+                        "M05",
+                        "M06",
+                        "M07",
+                        "M08",
+                        "M09",
+                        "M10",
+                        "M11",
+                        "M12"
                     ]
                 },
                 "eras": {
@@ -568,10 +688,10 @@
                         "V",
                         "H",
                         "K",
-                        "Sze",
+                        "Sz",
                         "Cs",
                         "P",
-                        "Szo"
+                        "Sz"
                     ],
                     "short": [
                         "V",
@@ -844,6 +964,20 @@
                         "10",
                         "11",
                         "12"
+                    ],
+                    "short": [
+                        "Moh.",
+                        "Saf.",
+                        "Rébi I",
+                        "Rébi II",
+                        "Dsem. I",
+                        "Dsem. II",
+                        "Red.",
+                        "Sab.",
+                        "Ram.",
+                        "Sev.",
+                        "Dsül k.",
+                        "Dsül h."
                     ],
                     "long": [
                         "Moharrem",

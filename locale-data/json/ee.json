@@ -29,11 +29,31 @@
             },
             null,
             null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
             {
                 "month": "long",
                 "day": "numeric",
                 "year": "numeric",
                 "pattern": "{month} {day} lia, {year}"
+            },
+            {
+                "month": "short",
+                "day": "numeric",
+                "year": "numeric",
+                "pattern": "{month} {day} lia, {year}"
+            },
+            {
+                "month": "2-digit",
+                "day": "2-digit",
+                "year": "numeric",
+                "pattern": "{month}/{day}/{year}"
             },
             {
                 "month": "numeric",
@@ -42,17 +62,27 @@
                 "pattern": "{month}/{day}/{year}"
             },
             {
+                "month": "long",
+                "year": "numeric",
+                "pattern": "{month} {year}"
+            },
+            {
+                "month": "short",
+                "year": "numeric",
+                "pattern": "{month} {year}"
+            },
+            {
                 "month": "numeric",
                 "year": "numeric",
                 "pattern": "{month}/{year}"
             },
             {
                 "month": "long",
-                "year": "numeric",
-                "pattern": "{month} {year}"
+                "day": "numeric",
+                "pattern": "{month} {day} lia"
             },
             {
-                "month": "long",
+                "month": "short",
                 "day": "numeric",
                 "pattern": "{month} {day} lia"
             },
@@ -68,7 +98,15 @@
                 "pattern": "{year}"
             },
             {
+                "year": "2-digit",
+                "pattern": "{year}"
+            },
+            {
                 "month": "long",
+                "pattern": "{month}"
+            },
+            {
+                "month": "short",
                 "pattern": "{month}"
             },
             {
@@ -77,6 +115,10 @@
             },
             {
                 "weekday": "long",
+                "pattern": "{weekday}"
+            },
+            {
+                "weekday": "narrow",
                 "pattern": "{weekday}"
             },
             {
@@ -384,6 +426,20 @@
                         "10",
                         "11",
                         "12"
+                    ],
+                    "long": [
+                        "M01",
+                        "M02",
+                        "M03",
+                        "M04",
+                        "M05",
+                        "M06",
+                        "M07",
+                        "M08",
+                        "M09",
+                        "M10",
+                        "M11",
+                        "M12"
                     ]
                 },
                 "eras": {
@@ -484,13 +540,13 @@
                 },
                 "days": {
                     "narrow": [
-                        "kɔs",
-                        "dzo",
-                        "bla",
-                        "kuɖ",
-                        "yaw",
-                        "fiɖ",
-                        "mem"
+                        "k",
+                        "d",
+                        "b",
+                        "k",
+                        "y",
+                        "f",
+                        "m"
                     ],
                     "short": [
                         "kɔs",

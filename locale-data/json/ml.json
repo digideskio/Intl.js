@@ -41,15 +41,87 @@
                 "year": "numeric",
                 "month": "long",
                 "day": "numeric",
+                "hour": "2-digit",
+                "minute": "2-digit",
+                "pattern": "{year} {month} {day} {hour}:{minute}",
+                "pattern12": "{year} {month} {day} {hour}:{minute} {ampm}"
+            },
+            {
+                "year": "numeric",
+                "month": "long",
+                "day": "numeric",
                 "hour": "numeric",
                 "minute": "2-digit",
                 "pattern": "{year} {month} {day} {hour}:{minute}",
                 "pattern12": "{year} {month} {day} {hour}:{minute} {ampm}"
             },
             {
+                "year": "numeric",
+                "month": "short",
+                "day": "numeric",
+                "hour": "2-digit",
+                "minute": "2-digit",
+                "pattern": "{year} {month} {day} {hour}:{minute}",
+                "pattern12": "{year} {month} {day} {hour}:{minute} {ampm}"
+            },
+            {
+                "year": "numeric",
+                "month": "short",
+                "day": "numeric",
+                "hour": "numeric",
+                "minute": "2-digit",
+                "pattern": "{year} {month} {day} {hour}:{minute}",
+                "pattern12": "{year} {month} {day} {hour}:{minute} {ampm}"
+            },
+            {
+                "day": "2-digit",
+                "month": "2-digit",
+                "year": "numeric",
+                "hour": "2-digit",
+                "minute": "2-digit",
+                "pattern": "{day}/{month}/{year} {hour}:{minute}",
+                "pattern12": "{day}/{month}/{year} {hour}:{minute} {ampm}"
+            },
+            {
                 "day": "numeric",
                 "month": "numeric",
                 "year": "numeric",
+                "hour": "2-digit",
+                "minute": "2-digit",
+                "pattern": "{day}/{month}/{year} {hour}:{minute}",
+                "pattern12": "{day}/{month}/{year} {hour}:{minute} {ampm}"
+            },
+            {
+                "day": "numeric",
+                "month": "numeric",
+                "year": "numeric",
+                "hour": "numeric",
+                "minute": "2-digit",
+                "pattern": "{day}/{month}/{year} {hour}:{minute}",
+                "pattern12": "{day}/{month}/{year} {hour}:{minute} {ampm}"
+            },
+            {
+                "day": "numeric",
+                "month": "numeric",
+                "year": "2-digit",
+                "hour": "2-digit",
+                "minute": "2-digit",
+                "pattern": "{day}/{month}/{year} {hour}:{minute}",
+                "pattern12": "{day}/{month}/{year} {hour}:{minute} {ampm}"
+            },
+            {
+                "day": "2-digit",
+                "month": "2-digit",
+                "year": "2-digit",
+                "hour": "2-digit",
+                "minute": "2-digit",
+                "pattern": "{day}/{month}/{year} {hour}:{minute}",
+                "pattern12": "{day}/{month}/{year} {hour}:{minute} {ampm}"
+            },
+            {
+                "day": "numeric",
+                "month": "numeric",
+                "year": "2-digit",
                 "hour": "numeric",
                 "minute": "2-digit",
                 "pattern": "{day}/{month}/{year} {hour}:{minute}",
@@ -62,15 +134,22 @@
                 "pattern": "{year} {month} {day}"
             },
             {
+                "year": "numeric",
+                "month": "short",
                 "day": "numeric",
-                "month": "numeric",
+                "pattern": "{year} {month} {day}"
+            },
+            {
+                "day": "2-digit",
+                "month": "2-digit",
                 "year": "numeric",
                 "pattern": "{day}/{month}/{year}"
             },
             {
+                "day": "numeric",
                 "month": "numeric",
                 "year": "numeric",
-                "pattern": "{month}-{year}"
+                "pattern": "{day}/{month}/{year}"
             },
             {
                 "year": "numeric",
@@ -78,7 +157,22 @@
                 "pattern": "{year} {month}"
             },
             {
+                "year": "numeric",
+                "month": "short",
+                "pattern": "{year} {month}"
+            },
+            {
+                "month": "numeric",
+                "year": "numeric",
+                "pattern": "{month}-{year}"
+            },
+            {
                 "month": "long",
+                "day": "numeric",
+                "pattern": "{month} {day}"
+            },
+            {
+                "month": "short",
                 "day": "numeric",
                 "pattern": "{month} {day}"
             },
@@ -105,7 +199,15 @@
                 "pattern": "{year}"
             },
             {
+                "year": "2-digit",
+                "pattern": "{year}"
+            },
+            {
                 "month": "long",
+                "pattern": "{month}"
+            },
+            {
+                "month": "short",
                 "pattern": "{month}"
             },
             {
@@ -114,6 +216,10 @@
             },
             {
                 "weekday": "long",
+                "pattern": "{weekday}"
+            },
+            {
+                "weekday": "narrow",
                 "pattern": "{weekday}"
             },
             {
@@ -164,6 +270,20 @@
                         "10",
                         "11",
                         "12"
+                    ],
+                    "long": [
+                        "M01",
+                        "M02",
+                        "M03",
+                        "M04",
+                        "M05",
+                        "M06",
+                        "M07",
+                        "M08",
+                        "M09",
+                        "M10",
+                        "M11",
+                        "M12"
                     ]
                 }
             },
@@ -200,6 +320,21 @@
                         "11",
                         "12",
                         "13"
+                    ],
+                    "long": [
+                        "Tout",
+                        "Baba",
+                        "Hator",
+                        "Kiahk",
+                        "Toba",
+                        "Amshir",
+                        "Baramhat",
+                        "Baramouda",
+                        "Bashans",
+                        "Paona",
+                        "Epep",
+                        "Mesra",
+                        "Nasie"
                     ]
                 },
                 "eras": {
@@ -242,6 +377,21 @@
                         "11",
                         "12",
                         "13"
+                    ],
+                    "long": [
+                        "Meskerem",
+                        "Tekemt",
+                        "Hedar",
+                        "Tahsas",
+                        "Ter",
+                        "Yekatit",
+                        "Megabit",
+                        "Miazia",
+                        "Genbot",
+                        "Sene",
+                        "Hamle",
+                        "Nehasse",
+                        "Pagumen"
                     ]
                 },
                 "eras": {
@@ -289,6 +439,20 @@
                         "10",
                         "11",
                         "12"
+                    ],
+                    "long": [
+                        "M01",
+                        "M02",
+                        "M03",
+                        "M04",
+                        "M05",
+                        "M06",
+                        "M07",
+                        "M08",
+                        "M09",
+                        "M10",
+                        "M11",
+                        "M12"
                     ]
                 },
                 "eras": {
@@ -389,11 +553,11 @@
                 },
                 "days": {
                     "narrow": [
-                        "ഞാ",
+                        "ഞ",
                         "തി",
-                        "ചൊ",
+                        "ച",
                         "ബു",
-                        "വ്യാ",
+                        "വ",
                         "വെ",
                         "ശ"
                     ],
@@ -470,6 +634,22 @@
                         "12",
                         "13",
                         "7"
+                    ],
+                    "long": [
+                        "Tishri",
+                        "Heshvan",
+                        "Kislev",
+                        "Tevet",
+                        "Shevat",
+                        "Adar I",
+                        "Adar",
+                        "Nisan",
+                        "Iyar",
+                        "Sivan",
+                        "Tamuz",
+                        "Av",
+                        "Elul",
+                        "Adar II"
                     ]
                 },
                 "eras": {
@@ -509,6 +689,20 @@
                         "പൗ",
                         "മാ",
                         "ഫ"
+                    ],
+                    "long": [
+                        "ചൈത്രം",
+                        "വൈശാഖം",
+                        "ജ്യേഷ്ഠം",
+                        "ആഷാഢം",
+                        "ശ്രാവണം",
+                        "ഭാദ്രപാദം",
+                        "ആശ്വിനം",
+                        "കാർത്തികം",
+                        "മാർഗശീർഷം",
+                        "പൗഷം",
+                        "മാഘം",
+                        "ഫൽഗുനം"
                     ]
                 },
                 "eras": {
@@ -562,6 +756,34 @@
                         "ശ",
                         "ദു",
                         "ദു"
+                    ],
+                    "short": [
+                        "Muh.",
+                        "Saf.",
+                        "Rab. I",
+                        "Rab. II",
+                        "Jum. I",
+                        "Jum. II",
+                        "Raj.",
+                        "Sha.",
+                        "Ram.",
+                        "Shaw.",
+                        "Dhuʻl-Q.",
+                        "Dhuʻl-H."
+                    ],
+                    "long": [
+                        "മുഹറം",
+                        "സഫർ",
+                        "റബീഹുൽ അവ്വൽ",
+                        "റബീഹുൽ ആഖിർ",
+                        "ജമാദുൽ അവ്വൽ",
+                        "ജമാദുൽ ആഖിർ",
+                        "റജബ്",
+                        "ശഹബാൻ",
+                        "റമളാൻ",
+                        "ശവ്വാൽ",
+                        "ദുൽ ഖഹദ്",
+                        "ദുൽ ഹിജ്ജ"
                     ]
                 },
                 "eras": {
@@ -1081,6 +1303,20 @@
                         "10",
                         "11",
                         "12"
+                    ],
+                    "long": [
+                        "Farvardin",
+                        "Ordibehesht",
+                        "Khordad",
+                        "Tir",
+                        "Mordad",
+                        "Shahrivar",
+                        "Mehr",
+                        "Aban",
+                        "Azar",
+                        "Dey",
+                        "Bahman",
+                        "Esfand"
                     ]
                 },
                 "eras": {

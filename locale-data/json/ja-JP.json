@@ -49,6 +49,78 @@
             },
             {
                 "year": "numeric",
+                "month": "long",
+                "day": "numeric",
+                "hour": "numeric",
+                "minute": "2-digit",
+                "pattern": "{year}年{month}月{day}日 {hour}:{minute}",
+                "pattern12": "{year}年{month}月{day}日 {ampm}{hour}:{minute}"
+            },
+            {
+                "year": "numeric",
+                "month": "short",
+                "day": "numeric",
+                "hour": "numeric",
+                "minute": "2-digit",
+                "pattern": "{year}年{month}月{day}日 {hour}:{minute}",
+                "pattern12": "{year}年{month}月{day}日 {ampm}{hour}:{minute}"
+            },
+            {
+                "year": "numeric",
+                "month": "short",
+                "day": "numeric",
+                "hour": "numeric",
+                "minute": "2-digit",
+                "pattern": "{year}年{month}月{day}日 {hour}:{minute}",
+                "pattern12": "{year}年{month}月{day}日 {ampm}{hour}:{minute}"
+            },
+            {
+                "year": "numeric",
+                "month": "2-digit",
+                "day": "2-digit",
+                "hour": "numeric",
+                "minute": "2-digit",
+                "pattern": "{year}/{month}/{day} {hour}:{minute}",
+                "pattern12": "{year}/{month}/{day} {ampm}{hour}:{minute}"
+            },
+            {
+                "year": "numeric",
+                "month": "numeric",
+                "day": "numeric",
+                "hour": "numeric",
+                "minute": "2-digit",
+                "pattern": "{year}/{month}/{day} {hour}:{minute}",
+                "pattern12": "{year}/{month}/{day} {ampm}{hour}:{minute}"
+            },
+            {
+                "year": "numeric",
+                "month": "numeric",
+                "day": "numeric",
+                "hour": "numeric",
+                "minute": "2-digit",
+                "pattern": "{year}/{month}/{day} {hour}:{minute}",
+                "pattern12": "{year}/{month}/{day} {ampm}{hour}:{minute}"
+            },
+            {
+                "year": "2-digit",
+                "month": "numeric",
+                "day": "numeric",
+                "hour": "numeric",
+                "minute": "2-digit",
+                "pattern": "{year}/{month}/{day} {hour}:{minute}",
+                "pattern12": "{year}/{month}/{day} {ampm}{hour}:{minute}"
+            },
+            {
+                "year": "2-digit",
+                "month": "2-digit",
+                "day": "2-digit",
+                "hour": "numeric",
+                "minute": "2-digit",
+                "pattern": "{year}/{month}/{day} {hour}:{minute}",
+                "pattern12": "{year}/{month}/{day} {ampm}{hour}:{minute}"
+            },
+            {
+                "year": "2-digit",
                 "month": "numeric",
                 "day": "numeric",
                 "hour": "numeric",
@@ -64,14 +136,21 @@
             },
             {
                 "year": "numeric",
-                "month": "numeric",
+                "month": "short",
                 "day": "numeric",
+                "pattern": "{year}年{month}月{day}日"
+            },
+            {
+                "year": "numeric",
+                "month": "2-digit",
+                "day": "2-digit",
                 "pattern": "{year}/{month}/{day}"
             },
             {
                 "year": "numeric",
                 "month": "numeric",
-                "pattern": "{year}/{month}"
+                "day": "numeric",
+                "pattern": "{year}/{month}/{day}"
             },
             {
                 "year": "numeric",
@@ -79,7 +158,22 @@
                 "pattern": "{year}年{month}月"
             },
             {
+                "year": "numeric",
+                "month": "short",
+                "pattern": "{year}年{month}月"
+            },
+            {
+                "year": "numeric",
+                "month": "numeric",
+                "pattern": "{year}/{month}"
+            },
+            {
                 "month": "long",
+                "day": "numeric",
+                "pattern": "{month}月{day}日"
+            },
+            {
+                "month": "short",
                 "day": "numeric",
                 "pattern": "{month}月{day}日"
             },
@@ -106,7 +200,15 @@
                 "pattern": "{year}年"
             },
             {
+                "year": "2-digit",
+                "pattern": "{year}年"
+            },
+            {
                 "month": "long",
+                "pattern": "{month}月"
+            },
+            {
+                "month": "short",
                 "pattern": "{month}月"
             },
             {
@@ -115,6 +217,10 @@
             },
             {
                 "weekday": "long",
+                "pattern": "{weekday}"
+            },
+            {
+                "weekday": "narrow",
                 "pattern": "{weekday}"
             },
             {
@@ -559,6 +665,20 @@
                         "10",
                         "11",
                         "12"
+                    ],
+                    "long": [
+                        "M01",
+                        "M02",
+                        "M03",
+                        "M04",
+                        "M05",
+                        "M06",
+                        "M07",
+                        "M08",
+                        "M09",
+                        "M10",
+                        "M11",
+                        "M12"
                     ]
                 },
                 "eras": {
