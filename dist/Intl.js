@@ -2504,7 +2504,7 @@
                 else if (f in $$core$$dateWidths) {
                     switch (p) {
                         case 'month':
-                            fv = $$core$$resolveDateString(localeData, ca, 'months', f, tm['[['+ p +']]']);
+                            fv = $$core$$resolveDateString(localeData, ca, internal['[[day]]'] ? 'months' : 'months-stand-alone', f, tm['[['+ p +']]']);
                             break;
 
                         case 'weekday':
