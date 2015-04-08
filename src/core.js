@@ -988,9 +988,11 @@ defineProperty(Intl, 'NumberFormat', {
 });
 
 // Must explicitly set prototypes as unwritable
-defineProperty(Intl.NumberFormat, 'prototype', {
-    writable: false
-});
+try {
+  defineProperty(Intl.NumberFormat, 'prototype', {
+      writable: false
+  });
+} catch(err){}
 
 /**
  * The abstract operation InitializeNumberFormat accepts the arguments
@@ -1745,9 +1747,11 @@ defineProperty(Intl, 'DateTimeFormat', {
 });
 
 // Must explicitly set prototypes as unwritable
-defineProperty(DateTimeFormatConstructor, 'prototype', {
+try {
+  defineProperty(DateTimeFormatConstructor, 'prototype', {
     writable: false
-});
+  });
+} catch(err){}
 
 /**
  * The abstract operation InitializeDateTimeFormat accepts the arguments dateTimeFormat

@@ -1064,9 +1064,11 @@
     });
 
     // Must explicitly set prototypes as unwritable
-    $$core$$defineProperty($$core$$Intl.NumberFormat, 'prototype', {
-        writable: false
-    });
+    try {
+      $$core$$defineProperty($$core$$Intl.NumberFormat, 'prototype', {
+          writable: false
+      });
+    } catch(err){}
 
     /**
      * The abstract operation InitializeNumberFormat accepts the arguments
@@ -1821,9 +1823,11 @@
     });
 
     // Must explicitly set prototypes as unwritable
-    $$core$$defineProperty($$core$$DateTimeFormatConstructor, 'prototype', {
+    try {
+      $$core$$defineProperty($$core$$DateTimeFormatConstructor, 'prototype', {
         writable: false
-    });
+      });
+    } catch(err){}
 
     /**
      * The abstract operation InitializeDateTimeFormat accepts the arguments dateTimeFormat
