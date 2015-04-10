@@ -96,8 +96,8 @@
     var $$core$$Intl = {},
 
         $$core$$realDefineProp = (function () {
-            try { return !!Object.defineProperty({}, 'a', {}); }
-            catch (e) { return false; }
+            //https://github.com/andyearnshaw/Intl.js/issues/81
+            return false;
         })(),
 
         // Need a workaround for getters in ES3
