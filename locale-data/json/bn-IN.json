@@ -883,7 +883,8 @@
     },
     "number": {
         "nu": [
-            "beng"
+            "beng",
+            "latn"
         ],
         "patterns": {
             "decimal": {

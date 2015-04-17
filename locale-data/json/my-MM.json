@@ -867,7 +867,8 @@
     },
     "number": {
         "nu": [
-            "mymr"
+            "mymr",
+            "latn"
         ],
         "patterns": {
             "decimal": {

@@ -829,7 +829,8 @@
     },
     "number": {
         "nu": [
-            "arabext"
+            "arabext",
+            "latn"
         ],
         "patterns": {
             "decimal": {

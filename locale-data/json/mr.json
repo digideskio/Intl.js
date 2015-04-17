@@ -883,7 +883,8 @@
     },
     "number": {
         "nu": [
-            "deva"
+            "deva",
+            "latn"
         ],
         "patterns": {
             "decimal": {
