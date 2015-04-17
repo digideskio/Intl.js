@@ -187,13 +187,14 @@ function processObj(data) {
         gopv = function (o) {
             return o ? Object.getOwnPropertyNames(o).map(function (e) { return o[e]; }) : undefined;
         },
+        latnNu = 'latn',
 
         // Copy numbering systems
         defaultNu   = data.numbers.defaultNumberingSystem,
         otherNu     = gopn(data.numbers.otherNumberingSystems).map(function(key) {
                         return data.numbers.otherNumberingSystems[key];
                     }).filter(function (key) {
-                        return key !== defaultNu;
+                        return key !== defaultNu && key !== latnNu;
                     }),
 
         // Map calendar names to BCP 47 unicode extension 'ca' keys
@@ -239,11 +240,11 @@ function processObj(data) {
                 hour12: !/H|k/.test(defaultTimeFormat),
 
                 formats: [],
-                calendars: {},
+                calendars: {}
             },
             number: {
                 // Numbering systems, with the default first
-                nu: [ defaultNu ],
+                nu: (defaultNu === latnNu) ? [ latnNu ] : [ defaultNu, latnNu ],
 
                 // Formatting patterns
                 patterns: {},
