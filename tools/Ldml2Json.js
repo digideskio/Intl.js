@@ -222,14 +222,17 @@ function processObj(data) {
                         + (id.variant   ? '-' + id.variant   : ''),
 
             date: {
-                // Get supported calendars (as extension keys)
-                ca: gopn(data.dates.calendars)
+               //Include only gregorian to cut down on size of locale data files
+                ca:['gregory'],
+
+                  // Get supported calendars (as extension keys)
+                  /*gopn(data.dates.calendars)
                         .map(function (cal) { return caMap[cal] || cal; })
 
                         // Move 'gregory' (the default) to the front, the rest is alphabetical
                         .sort(function (a, b) {
                             return -(a === 'gregory') + (b === 'gregory') || a.localeCompare(b);
-                        }),
+                        }),*/
 
                 // Boolean value indicating whether hours from 1 to 12 (true) or from 0 to
                 // 11 (false) should be used. 'h' is 1 to 12, 'k' is 0 to 11.
@@ -303,6 +306,12 @@ function processObj(data) {
 
     // Copy the formatting information
     gopn(data.dates.calendars).forEach(function (cal) {
+        //Include only gregory calendar data to cut down
+        //size of locale data files
+        if((caMap[cal] || cal) !== 'gregory') {
+          return;
+        }
+
         var frmt,
             ca = caMap[cal] || cal,
             obj = ret.date.calendars[ca] = {},
