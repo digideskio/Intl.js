@@ -304,14 +304,32 @@ function processObj(data) {
     gopn(data.dates.calendars).forEach(function (cal) {
         var frmt,
             ca = caMap[cal] || cal,
-            obj = ret.date.calendars[ca] = {};
+            obj = ret.date.calendars[ca] = {},
+            monthsWidths = {
+                narrow: 'narrow',
+                abbreviated: 'short',
+                wide: 'long'
+            },
+            standAloneMonths;
 
-        if ((frmt = data.dates.calendars[cal].months) && (frmt = frmt.format)) {
-            obj.months = {
-                narrow: gopv(frmt.narrow),
-                short:  gopv(frmt.abbreviated),
-                long:   gopv(frmt.wide)
-            };
+        if ((frmt = data.dates.calendars[cal].months)) {
+            obj.months = {};
+
+            for(var width in monthsWidths){
+              obj.months[monthsWidths[width]] = gopv(frmt['format'][width]);
+            }
+
+            for(var width in monthsWidths){
+              if(frmt['stand-alone'][width] && obj.months[monthsWidths[width]] &&
+                 gopv(frmt['stand-alone'][width]).join('') !== obj.months[monthsWidths[width]].join('')){
+                standAloneMonths = standAloneMonths || {};
+                standAloneMonths[monthsWidths[width]] = gopv(frmt['stand-alone'][width]);
+              }
+            }
+
+            if(standAloneMonths) {
+              obj['months-stand-alone'] = standAloneMonths;
+            }
         }
         if ((frmt = data.dates.calendars[cal].days) && (frmt = frmt.format)) {
             obj.days = {
