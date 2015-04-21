@@ -315,7 +315,7 @@ function processObj(data) {
         }
         if ((frmt = data.dates.calendars[cal].days) && (frmt = frmt.format)) {
             obj.days = {
-                narrow: gopv(frmt.short),
+                narrow: gopv(frmt.narrow),
                 short:  gopv(frmt.abbreviated),
                 long:   gopv(frmt.wide)
             };
