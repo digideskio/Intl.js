@@ -96,8 +96,8 @@
     var $$core$$Intl = {},
 
         $$core$$realDefineProp = (function () {
-            try { return !!Object.defineProperty({}, 'a', {}); }
-            catch (e) { return false; }
+          //https://github.com/andyearnshaw/Intl.js/issues/81
+          return false;
         })(),
 
         // Need a workaround for getters in ES3
@@ -2504,7 +2504,7 @@
                 else if (f in $$core$$dateWidths) {
                     switch (p) {
                         case 'month':
-                            fv = $$core$$resolveDateString(localeData, ca, 'months', f, tm['[['+ p +']]']);
+                            fv = $$core$$resolveDateString(localeData, ca, internal['[[day]]'] ? 'months' : 'months-stand-alone', f, tm['[['+ p +']]']);
                             break;
 
                         case 'weekday':
@@ -2901,13 +2901,25 @@
                 short:  ['long', 'narrow'],
                 long:   ['short', 'narrow']
             },
+            altComp = {
+              'months-stand-alone' : 'months'
+            },
+            altObj = altComp[component] ?
+              (data[ca] && data[ca][altComp[component]] ?
+                 data[ca][altComp[component]] : data.gregory[altComp[component]]
+              ): null,
 
             //
-            resolved = $$core$$hop.call(obj, width)
-                      ? obj[width]
-                      : $$core$$hop.call(obj, alts[width][0])
-                          ? obj[alts[width][0]]
-                          : obj[alts[width][1]];
+            resolved = obj && $$core$$hop.call(obj, width) ? obj[width] :
+              (altObj && $$core$$hop.call(altObj, width) ?  altObj[width] : undefined);
+
+            if(!resolved && obj) {
+              resolved = $$core$$hop.call(obj, alts[width][0]) ? obj[alts[width][0]] : obj[alts[width][1]];
+            }
+
+            if(!resolved && altObj) {
+              resolved = $$core$$hop.call(altObj, alts[width][0]) ? altObj[alts[width][0]] : altObj[alts[width][1]];
+            }
 
         // `key` wouldn't be specified for components 'dayPeriods'
         return key != null ? resolved[key] : resolved;
