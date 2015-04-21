@@ -40,7 +40,7 @@ var
     out = 'cldr/',
 
     // Match these datetime components in a CLDR pattern, except those in single quotes
-    expDTComponents = /(?:[Eec]{1,6}|G{1,5}|(?:[yYu]+|U{1,5})|[ML]{1,5}|d{1,2}|a|[hkHK]{1,2}|m{1,2}|s{1,2}|z{1,4})(?=([^']*'[^']*')*[^']*$)/g,
+    expDTComponents = /(?:[Eec]{1,6}|G{1,5}|(?:[yYu]+|U{1,5})|[ML]{1,5}|d{1,3}|a|[hkHK]{1,2}|m{1,2}|s{1,2}|z{1,4})(?=([^']*'[^']*')*[^']*$)/g,
 
     // Skip over patterns with these datetime components
     unwantedDTCs = /[QxXVOvZASjgFDwWIQqH]/,
@@ -371,37 +371,88 @@ function processObj(data) {
          * The array below could be easily extended to include more formats
          */
         var formats = [
-                // 'weekday', 'year', 'month', 'day', 'hour', 'minute', 'second'
-                [ 'hms', 'yMMMMEEEEd' ],
+              // 'weekday', 'year', 'month', 'day', 'hour', 'minute', 'second'
+              [ 'hms', 'yMMMMEEEEd' ],
 
-                // 'weekday', 'year', 'month', 'day'
-                [ '', 'yMMMMEEEEd' ],
+              // 'weekday', 'year', 'month', 'day'
+              [ '', 'yMMMMEEEEd' ],
 
-                // 'year', 'month', 'day'
-                [ '', 'yMMMMd'],
-                [ '', 'yMd'],
+              // 'year', 'month', 'day', 'hour', 'minute'
+              ['hhm', 'yMMMMd'],
+              ['hm' , 'yMMMMd'],
+              ['hhm', 'yMMMd'],
+              ['hm' , 'yMMMd'],
+              ['hhm', 'yMMdd'],
+              ['hhm', 'yMd'],
+              ['hm', 'yMd'],
+              ['hhm', 'yyMd'],
+              ['hhm', 'yyMMdd'],
+              ['hm', 'yyMd'],
 
-                // 'year', 'month'
-                [ '', 'yM' ],
-                [ '', 'yMMMM' ],
+              // 'year', 'month', 'day'
+              [ '', 'yMMMMd'],
+              [ '', 'yMMMd'],
+              [ '', 'yMMdd'],
+              [ '', 'yMd'],
 
-                // 'month', 'day'
-                [ '', 'MMMMd' ],
-                [ '', 'Md' ],
+              // 'year', 'month'
+              [ '', 'yMMMM' ],
+              [ '', 'yMMM' ],
+              [ '', 'yM' ],
 
-                // 'hour', 'minute', 'second'
-                [ 'hms', '' ],
+              // 'month', 'day'
+              [ '', 'MMMMd' ],
+              [ '', 'MMMd' ],
+              [ '', 'Md' ],
 
-                // 'hour', 'minute'
-                [ 'hm', '' ]
+              // 'hour', 'minute', 'second'
+              [ 'hms', '' ],
+
+              // 'hour', 'minute'
+              [ 'hm', '' ],
+
+              //year
+              ['','y'],
+              ['','yy'],
+
+              //standalone month
+              ['','MMMM'],  //long
+              ['','MMM'],   //short
+              ['','M'],     //numeric
+
+              //standalone weekday
+              ['','EEEE'],  //long
+              ['','EEEEE'], //narrow
+              ['','E'],     //numeric
+
+              //standalone day
+              ['','d']
+
             ],
             avail = defCa.dateTimeFormats.availableFormats,
             order = defCa.dateTimeFormats.medium,
             verify = function (frmt) {
-                // Unicode LDML spec allows us to expand some pattern components to suit
-                var dFrmt = frmt[1] && frmt[1].replace(/M{4,5}/, 'MMM').replace(/E{4,6}/, 'E');
+              // Unicode LDML spec allows us to expand some pattern components to suit
+              var dFrmt = frmt[1],
+                tFrmt = frmt[0];
 
-                return (!frmt[0] || avail[frmt[0]]) && (!dFrmt || avail[dFrmt]);
+              if(dFrmt) {
+
+                if(/M{3,5}/.test(dFrmt)){
+                  dFrmt = dFrmt.replace(/M{4,5}/, 'MMM')
+                } else {
+                  dFrmt = dFrmt.replace(/M{2,3}/, 'M')
+                }
+
+                dFrmt =  dFrmt.replace(/E{4,6}/, 'E')
+                  .replace(/y{1,3}/, 'y')
+                  .replace(/d{1,3}/, 'd');
+              }
+
+              if(tFrmt) {
+                tFrmt =  tFrmt.replace('hh', 'h');
+              }
+              return (!tFrmt || avail[tFrmt]) && (!dFrmt || avail[dFrmt]);
             };
 
         // Make sure every local supports these minimum required formats
@@ -410,30 +461,66 @@ function processObj(data) {
 
         // Map the formats into a pattern for createDateTimeFormats
         ret.date.formats = formats.map(function (frmt) {
-            var M, E, dFrmt;
 
-            // Expand component lengths if necessary, as allowed in the LDML spec
-            if (frmt[1]) {
-                // Get the lengths of 'M' and 'E' substrings in the date pattern
-                // as arrays that can be joined to create a new substring
-                M = new Array((frmt[1].match(/M/g)||[]).length + 1);
-                E = new Array((frmt[1].match(/E/g)||[]).length + 1);
+          var M, E, Y, D, H, dFrmt, tFrmt;
 
-                dFrmt = avail[frmt[1].replace(/M{4,5}/, 'MMM').replace(/E{4,6}/, 'E')];
+          // Expand component lengths if necessary, as allowed in the LDML spec
+          if (frmt[1]) {
+            // Get the lengths of 'M' and 'E' substrings in the date pattern
+            // as arrays that can be joined to create a new substring
+            M = new Array((frmt[1].match(/M/g)||[]).length + 1);
+            E = new Array((frmt[1].match(/E/g)||[]).length + 1);
+            Y = new Array((frmt[1].match(/y/g)||[]).length + 1);
+            D = new Array((frmt[1].match(/d/g)||[]).length + 1)
+            ;
 
-                if (M.length > 2)
-                    dFrmt = dFrmt.replace(/(M|L)+/, M.join('$1'));
+            if(avail[frmt[1]]) {
+              dFrmt =  avail[frmt[1]];
+            } else {
+              dFrmt = frmt[1];
+              if(/M{3,5}/.test(dFrmt)){
+                dFrmt = dFrmt.replace(/M{4,5}/, 'MMM')
+              } else {
+                dFrmt = dFrmt.replace(/M{2,3}/, 'M')
+              }
+              dFrmt = dFrmt.replace(/E{4,6}/, 'E').replace(/y{1,3}/, 'y').replace(/d{1,3}/, 'd')
 
-                if (E.length > 2)
-                    dFrmt = dFrmt.replace(/([Eec])+/, E.join('$1'));
+              dFrmt = avail[dFrmt];
             }
 
-            return createDateTimeFormat(
-                order
-                    .replace('{0}', avail[frmt[0]] || '')
-                    .replace('{1}', dFrmt || '')
-                    .replace(/^[,\s]+|[,\s]+$/gi, '')
-            );
+            if (M.length > 2)
+              dFrmt = dFrmt.replace(/(M|L)+/, M.join('$1'));
+
+            if (E.length > 2)
+              dFrmt = dFrmt.replace(/([Eec])+/, E.join('$1'));
+
+            if (Y.length > 2)
+              dFrmt = dFrmt.replace(/([Yy])+/, Y.join('$1'));
+
+            if (D.length > 2)
+              dFrmt = dFrmt.replace(/([Dd])+/, D.join('$1'));
+          }
+
+          if(frmt[0]) {
+            H = new Array((frmt[0].match(/h/g)||[]).length + 1);
+
+            if(avail[frmt[0]]) {
+              tFrmt =  avail[frmt[0]];
+            } else {
+              tFrmt = avail[frmt[0].replace('hh','h')];
+            }
+
+            if(H.length > 2)
+              tFrmt = tFrmt.replace(/([h])+/, H.join('$1'));
+          }
+
+
+          return createDateTimeFormat(
+            order
+              .replace('{0}', tFrmt || '')
+              .replace('{1}', dFrmt || '')
+              .replace(/^[,\s]+|[,\s]+$/gi, '')
+          );
         });
     });
 
