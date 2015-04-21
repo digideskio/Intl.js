@@ -2428,7 +2428,7 @@ function FormatDateTime(dateTimeFormat, x) {
             else if (f in dateWidths) {
                 switch (p) {
                     case 'month':
-                        fv = resolveDateString(localeData, ca, 'months', f, tm['[['+ p +']]']);
+                        fv = resolveDateString(localeData, ca, internal['[[day]]'] ? 'months' : 'months-stand-alone', f, tm['[['+ p +']]']);
                         break;
 
                     case 'weekday':
@@ -2825,13 +2825,25 @@ function resolveDateString(data, ca, component, width, key) {
             short:  ['long', 'narrow'],
             long:   ['short', 'narrow']
         },
+        altComp = {
+          'months-stand-alone' : 'months'
+        },
+        altObj = altComp[component] ?
+          (data[ca] && data[ca][altComp[component]] ?
+             data[ca][altComp[component]] : data.gregory[altComp[component]]
+          ): null,
 
         //
-        resolved = hop.call(obj, width)
-                  ? obj[width]
-                  : hop.call(obj, alts[width][0])
-                      ? obj[alts[width][0]]
-                      : obj[alts[width][1]];
+        resolved = obj && hop.call(obj, width) ? obj[width] :
+          (altObj && hop.call(altObj, width) ?  altObj[width] : undefined);
+
+        if(!resolved && obj) {
+          resolved = hop.call(obj, alts[width][0]) ? obj[alts[width][0]] : obj[alts[width][1]];
+        }
+
+        if(!resolved && altObj) {
+          resolved = hop.call(altObj, alts[width][0]) ? altObj[alts[width][0]] : altObj[alts[width][1]];
+        }
 
     // `key` wouldn't be specified for components 'dayPeriods'
     return key != null ? resolved[key] : resolved;
