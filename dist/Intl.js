@@ -87,11 +87,13 @@
 
     var $$exp$$expBCP47Syntax = RegExp('^(?:'+$$exp$$langtag+'|'+$$exp$$privateuse+'|'+$$exp$$grandfathered+')$', 'i');
 
-    var $$exp$$expVariantDupes = RegExp('^(?!x).*?-('+$$exp$$variant+')-(?:\\w{4,8}-(?!x-))*\\1\\b', 'i');
+    var $$exp$$expVariant = RegExp('^'+$$exp$$variant+'$', 'i');
 
-    var $$exp$$expSingletonDupes = RegExp('^(?!x).*?-('+$$exp$$singleton+')-(?:\\w+-(?!x-))*\\1\\b', 'i');
+    var $$exp$$expSingleton = RegExp('^'+$$exp$$singleton+'$', 'i');
 
     var $$exp$$expExtSequences = RegExp('-'+$$exp$$extension, 'ig');
+
+    var $$exp$$expPrivateUse = RegExp('^'+$$exp$$privateuse, 'i');
 
     var $$core$$Intl = {},
 
@@ -309,15 +311,50 @@
         if (!$$exp$$expBCP47Syntax.test(locale))
             return false;
 
-        // does not include duplicate variant subtags, and
-        if ($$exp$$expVariantDupes.test(locale))
-            return false;
+        //private use subtag
+        if($$exp$$expPrivateUse.test(locale)) {
+            return true;
+        }
 
-        // does not include duplicate singleton subtags.
-        if ($$exp$$expSingletonDupes.test(locale))
-            return false;
+        var token = '',
+            singletonDupes = {},
+            variantDupes = {},
+            hasDupes = false,
+            lastCharIdx = locale.length - 1,
+            firstDashIdx = locale.indexOf('-');
 
-        return true;
+        for(var idx = 0, l=''; l = locale.charAt(idx); idx++){
+            if(idx === lastCharIdx) {
+              token += l;
+            }
+
+            if(l === '-' || idx === lastCharIdx){
+                if(token === 'x'){
+                    break;
+                } else if($$exp$$expSingleton.test(token)){
+                  if(typeof singletonDupes[token] !== 'undefined') {
+                    hasDupes = true;
+                    break;
+                  }
+                  singletonDupes[token] = true;
+                  //variant and extension subtags may be the same
+                  //so we re-set extensionDupes here
+                  variantDupes = {};
+                } else if ($$exp$$expVariant.test(token)) {
+                    if(idx !== firstDashIdx) {
+                        if (typeof variantDupes[token] !== 'undefined') {
+                          hasDupes = true;
+                          break;
+                        }
+                        variantDupes[token] = true;
+                    }
+                }
+              token = '';
+            } else {
+                token += l;
+            }
+        }
+        return !hasDupes;
     }
 
     /**
@@ -1559,6 +1596,8 @@
             // a. Let currency be the value of the [[currency]] internal property of
             //    numberFormat.
                 currency = internal['[[currency]]'],
+                currCodePlaceholder = "{currency}",
+                currCodeIdx = result.indexOf(currCodePlaceholder),
 
             // Shorthand for the currency data
                 cData = data.currencies[currency];
@@ -1585,7 +1624,9 @@
             }
 
             // e. Replace the substring "{currency}" within result with cd.
-            result = result.replace('{currency}', cd);
+            if(currCodeIdx >= 0) {
+                result = result.substring(0, currCodeIdx) + cd + result.substring(currCodeIdx + currCodePlaceholder.length);
+            }
         }
 
         // Restore the RegExp properties
