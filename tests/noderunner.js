@@ -13,7 +13,9 @@ var LIBS = {
 // returns Error if test threw one
 function runTest(testPath) {
     var content,
-        context = LIBS.vm.createContext({});
+        context = LIBS.vm.createContext({
+          console: this.console
+        });
 
     content = LIBS.fs.readFileSync(LIBS.path.resolve(TEST_DIR, testPath)).toString();
     LIBS.vm.runInContext(INTL_LIB, context, LIB_PATH);

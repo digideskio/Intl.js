@@ -94,11 +94,13 @@ var
 //               / grandfathered       ; grandfathered tags
 export var expBCP47Syntax = RegExp('^(?:'+langtag+'|'+privateuse+'|'+grandfathered+')$', 'i');
 
-// Match duplicate variants in a language tag
-export var expVariantDupes = RegExp('^(?!x).*?-('+variant+')-(?:\\w{4,8}-(?!x-))*\\1\\b', 'i');
+// Match all variants
+export var expVariant = RegExp('^'+variant+'$', 'i');
 
-// Match duplicate singletons in a language tag (except in private use)
-export var expSingletonDupes = RegExp('^(?!x).*?-('+singleton+')-(?:\\w+-(?!x-))*\\1\\b', 'i');
+// Match all singletons
+export var expSingleton = RegExp('^'+singleton+'$', 'i');
 
 // Match all extension sequences
 export var expExtSequences = RegExp('-'+extension, 'ig');
+
+export var expPrivateUse = RegExp('^'+privateuse, 'i');
