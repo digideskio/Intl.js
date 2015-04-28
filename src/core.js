@@ -13,8 +13,9 @@
 import {
     expBCP47Syntax,
     expExtSequences,
-    expVariantDupes,
-    expSingletonDupes
+    expVariant,
+    expSingleton,
+    expPrivateUse
 } from './exp';
 
 var Intl = {},
@@ -233,15 +234,50 @@ function /* 6.2.2 */IsStructurallyValidLanguageTag(locale) {
     if (!expBCP47Syntax.test(locale))
         return false;
 
-    // does not include duplicate variant subtags, and
-    if (expVariantDupes.test(locale))
-        return false;
+    //private use subtag
+    if(expPrivateUse.test(locale)) {
+        return true;
+    }
 
-    // does not include duplicate singleton subtags.
-    if (expSingletonDupes.test(locale))
-        return false;
+    var token = '',
+        singletonDupes = {},
+        variantDupes = {},
+        hasDupes = false,
+        lastCharIdx = locale.length - 1,
+        firstDashIdx = locale.indexOf('-');
 
-    return true;
+    for(var idx = 0, l=''; l = locale.charAt(idx); idx++){
+        if(idx === lastCharIdx) {
+          token += l;
+        }
+
+        if(l === '-' || idx === lastCharIdx){
+            if(token === 'x'){
+                break;
+            } else if(expSingleton.test(token)){
+              if(typeof singletonDupes[token] !== 'undefined') {
+                hasDupes = true;
+                break;
+              }
+              singletonDupes[token] = true;
+              //variant and extension subtags may be the same
+              //so we re-set extensionDupes here
+              variantDupes = {};
+            } else if (expVariant.test(token)) {
+                if(idx !== firstDashIdx) {
+                    if (typeof variantDupes[token] !== 'undefined') {
+                      hasDupes = true;
+                      break;
+                    }
+                    variantDupes[token] = true;
+                }
+            }
+          token = '';
+        } else {
+            token += l;
+        }
+    }
+    return !hasDupes;
 }
 
 /**
@@ -1483,6 +1519,8 @@ function FormatNumber (numberFormat, x) {
         // a. Let currency be the value of the [[currency]] internal property of
         //    numberFormat.
             currency = internal['[[currency]]'],
+            currCodePlaceholder = "{currency}",
+            currCodeIdx = result.indexOf(currCodePlaceholder),
 
         // Shorthand for the currency data
             cData = data.currencies[currency];
@@ -1509,7 +1547,9 @@ function FormatNumber (numberFormat, x) {
         }
 
         // e. Replace the substring "{currency}" within result with cd.
-        result = result.replace('{currency}', cd);
+        if(currCodeIdx >= 0) {
+            result = result.substring(0, currCodeIdx) + cd + result.substring(currCodeIdx + currCodePlaceholder.length);
+        }
     }
 
     // Restore the RegExp properties
